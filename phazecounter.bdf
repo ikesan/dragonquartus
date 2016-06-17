@@ -52,6 +52,86 @@ applicable agreement for further details.
 	)
 	(text "VCC" (rect 128 7 149 17)(font "Arial" (font_size 6)))
 )
+(pin
+	(output)
+	(rect 808 176 984 192)
+	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
+	(text "p1" (rect 90 0 104 11)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 808 288 984 304)
+	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
+	(text "p2" (rect 90 0 104 11)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 824 424 1000 440)
+	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
+	(text "p3" (rect 90 0 104 11)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 824 536 1000 552)
+	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
+	(text "p4" (rect 90 0 104 11)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 816 648 992 664)
+	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
+	(text "p5" (rect 90 0 104 11)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
 (symbol
 	(rect 592 152 656 232)
 	(text "DFF" (rect 1 0 21 10)(font "Arial" (font_size 6)))
@@ -754,6 +834,31 @@ applicable agreement for further details.
 		(circle (rect 28 68 36 76))
 	)
 )
+(symbol
+	(rect 416 184 464 216)
+	(text "NOT" (rect 1 0 22 10)(font "Arial" (font_size 6)))
+	(text "clknot" (rect 3 21 33 32)(font "Arial" ))
+	(port
+		(pt 0 16)
+		(input)
+		(text "IN" (rect 2 7 16 18)(font "Courier New" (bold))(invisible))
+		(text "IN" (rect 2 7 16 18)(font "Courier New" (bold))(invisible))
+		(line (pt 0 16)(pt 13 16))
+	)
+	(port
+		(pt 48 16)
+		(output)
+		(text "OUT" (rect 32 7 53 18)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 32 7 53 18)(font "Courier New" (bold))(invisible))
+		(line (pt 39 16)(pt 48 16))
+	)
+	(drawing
+		(line (pt 13 25)(pt 13 7))
+		(line (pt 13 7)(pt 31 16))
+		(line (pt 13 25)(pt 31 16))
+		(circle (rect 31 12 39 20))
+	)
+)
 (connector
 	(pt 624 376)
 	(pt 624 408)
@@ -839,10 +944,6 @@ applicable agreement for further details.
 	(pt 552 728)
 )
 (connector
-	(pt 184 200)
-	(pt 560 200)
-)
-(connector
 	(pt 560 200)
 	(pt 560 320)
 )
@@ -883,16 +984,8 @@ applicable agreement for further details.
 	(pt 464 160)
 )
 (connector
-	(pt 440 168)
-	(pt 440 144)
-)
-(connector
 	(pt 440 144)
 	(pt 464 144)
-)
-(connector
-	(pt 440 168)
-	(pt 464 168)
 )
 (connector
 	(pt 344 168)
@@ -901,10 +994,6 @@ applicable agreement for further details.
 (connector
 	(pt 184 168)
 	(pt 344 168)
-)
-(connector
-	(pt 344 168)
-	(pt 440 168)
 )
 (connector
 	(pt 528 152)
@@ -1027,22 +1116,6 @@ applicable agreement for further details.
 	(pt 696 184)
 )
 (connector
-	(pt 584 200)
-	(pt 584 240)
-)
-(connector
-	(pt 584 240)
-	(pt 680 240)
-)
-(connector
-	(pt 560 200)
-	(pt 584 200)
-)
-(connector
-	(pt 584 200)
-	(pt 592 200)
-)
-(connector
 	(pt 680 200)
 	(pt 696 200)
 )
@@ -1051,20 +1124,12 @@ applicable agreement for further details.
 	(pt 696 312)
 )
 (connector
-	(pt 680 200)
-	(pt 680 240)
-)
-(connector
 	(pt 680 448)
 	(pt 704 448)
 )
 (connector
 	(pt 680 560)
 	(pt 696 560)
-)
-(connector
-	(pt 680 312)
-	(pt 680 448)
 )
 (connector
 	(pt 680 672)
@@ -1151,10 +1216,6 @@ applicable agreement for further details.
 	(pt 736 376)
 )
 (connector
-	(pt 680 240)
-	(pt 680 312)
-)
-(connector
 	(pt 576 256)
 	(pt 624 256)
 )
@@ -1215,12 +1276,120 @@ applicable agreement for further details.
 	(pt 456 464)
 )
 (connector
+	(pt 776 432)
+	(pt 776 512)
+)
+(connector
+	(pt 776 512)
+	(pt 440 512)
+)
+(connector
+	(pt 440 512)
+	(pt 440 584)
+)
+(connector
+	(pt 440 584)
+	(pt 456 584)
+)
+(connector
+	(pt 768 544)
+	(pt 768 616)
+)
+(connector
+	(pt 768 616)
+	(pt 440 616)
+)
+(connector
+	(pt 440 616)
+	(pt 440 672)
+)
+(connector
+	(pt 440 672)
+	(pt 456 672)
+)
+(connector
+	(pt 760 544)
+	(pt 768 544)
+)
+(connector
+	(pt 768 544)
+	(pt 824 544)
+)
+(connector
 	(pt 768 432)
 	(pt 776 432)
 )
 (connector
 	(pt 776 432)
-	(pt 776 512)
+	(pt 824 432)
+)
+(connector
+	(pt 760 296)
+	(pt 808 296)
+)
+(connector
+	(pt 760 184)
+	(pt 808 184)
+)
+(connector
+	(pt 680 312)
+	(pt 680 448)
+)
+(connector
+	(pt 384 240)
+	(pt 680 240)
+)
+(connector
+	(pt 384 240)
+	(pt 384 200)
+)
+(connector
+	(pt 680 200)
+	(pt 680 240)
+)
+(connector
+	(pt 680 240)
+	(pt 680 312)
+)
+(connector
+	(pt 184 200)
+	(pt 384 200)
+)
+(connector
+	(pt 384 200)
+	(pt 416 200)
+)
+(connector
+	(pt 464 200)
+	(pt 560 200)
+)
+(connector
+	(pt 560 200)
+	(pt 592 200)
+)
+(connector
+	(pt 344 168)
+	(pt 464 168)
+)
+(connector
+	(pt 792 656)
+	(pt 792 112)
+)
+(connector
+	(pt 776 656)
+	(pt 792 656)
+)
+(connector
+	(pt 792 656)
+	(pt 816 656)
+)
+(connector
+	(pt 440 112)
+	(pt 440 144)
+)
+(connector
+	(pt 440 112)
+	(pt 792 112)
 )
 (junction (pt 576 376))
 (junction (pt 576 504))
@@ -1228,19 +1397,15 @@ applicable agreement for further details.
 (junction (pt 552 496))
 (junction (pt 552 608))
 (junction (pt 560 320))
-(junction (pt 560 200))
 (junction (pt 560 448))
 (junction (pt 560 560))
 (junction (pt 552 256))
 (junction (pt 576 256))
 (junction (pt 624 256))
-(junction (pt 440 168))
 (junction (pt 344 168))
 (junction (pt 344 328))
 (junction (pt 344 448))
 (junction (pt 344 568))
-(junction (pt 584 200))
-(junction (pt 680 240))
 (junction (pt 680 312))
 (junction (pt 680 448))
 (junction (pt 680 560))
@@ -1253,3 +1418,11 @@ applicable agreement for further details.
 (junction (pt 728 376))
 (junction (pt 728 256))
 (junction (pt 624 136))
+(junction (pt 768 544))
+(junction (pt 776 432))
+(junction (pt 760 296))
+(junction (pt 760 184))
+(junction (pt 680 240))
+(junction (pt 384 200))
+(junction (pt 560 200))
+(junction (pt 792 656))
