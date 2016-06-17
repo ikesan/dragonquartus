@@ -1,0 +1,157 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 32-bit
+# Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+# Date created = 09:55:40  June 10, 2016
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		jikken_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY Cyclone
+set_global_assignment -name DEVICE EP1C6Q240C8
+set_global_assignment -name TOP_LEVEL_ENTITY jikken
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:55:40  JUNE 10, 2016"
+set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+
+set_global_assignment -name BDF_FILE x16.bdf
+set_global_assignment -name SOURCE_FILE ram2.cmp
+set_global_assignment -name BDF_FILE phazecounter.bdf
+set_global_assignment -name BDF_FILE phaze3.bdf
+set_global_assignment -name BDF_FILE kadai1.bdf
+set_global_assignment -name BDF_FILE opSelector.bdf
+set_global_assignment -name BDF_FILE output_files/regALUSelector.bdf
+set_global_assignment -name BDF_FILE output_files/ALU.bdf
+set_global_assignment -name BDF_FILE output_files/16bitsub2.bdf
+set_global_assignment -name BDF_FILE output_files/16bitcmp.bdf
+set_global_assignment -name BDF_FILE output_files/16_4_SRL.bdf
+set_global_assignment -name BDF_FILE output_files/16_4_SRA.bdf
+set_global_assignment -name BDF_FILE output_files/16_4_SLR.bdf
+set_global_assignment -name BDF_FILE output_files/16_4_SLL.bdf
+set_global_assignment -name BDF_FILE phaze2.bdf
+set_global_assignment -name BDF_FILE 88selector.bdf
+set_global_assignment -name BDF_FILE 38encoder.bdf
+set_global_assignment -name BDF_FILE 8regesters.bdf
+set_global_assignment -name QIP_FILE ram1.qip
+set_global_assignment -name BDF_FILE jikken.bdf
+set_global_assignment -name MIF_FILE meirei.mif
+set_global_assignment -name CDF_FILE output_files/Chain2.cdf
+set_global_assignment -name HEX_FILE meirei.hex
+set_global_assignment -name QIP_FILE ram2.qip
+set_global_assignment -name CDF_FILE output_files/Chain3.cdf
+set_global_assignment -name CDF_FILE output_files/Chain5.cdf
+set_global_assignment -name BDF_FILE "half-add.bdf"
+set_global_assignment -name BDF_FILE "all-add.bdf"
+set_global_assignment -name BDF_FILE 16bitadd.bdf
+set_global_assignment -name BDF_FILE 16bitadd2.bdf
+set_global_assignment -name BDF_FILE pc.bdf
+set_global_assignment -name BDF_FILE maruchipurekusa.bdf
+set_global_assignment -name BDF_FILE pc2.bdf
+set_global_assignment -name BDF_FILE Mulchplexer.bdf
+set_global_assignment -name BDF_FILE pc2withcount.bdf
+set_global_assignment -name CDF_FILE output_files/Chain4.cdf
+set_global_assignment -name CDF_FILE output_files/Chain6.cdf
+set_global_assignment -name CDF_FILE output_files/Chain8.cdf
+set_global_assignment -name CDF_FILE output_files/Chain9.cdf
+set_global_assignment -name CDF_FILE output_files/Chain10.cdf
+set_global_assignment -name BDF_FILE "output_files/kadai1-2.bdf"
+set_global_assignment -name BDF_FILE output_files/shower.bdf
+set_location_assignment PIN_239 -to I[15]
+set_location_assignment PIN_238 -to I[14]
+set_location_assignment PIN_237 -to I[13]
+set_location_assignment PIN_236 -to I[12]
+set_location_assignment PIN_235 -to I[11]
+set_location_assignment PIN_234 -to I[10]
+set_location_assignment PIN_233 -to I[9]
+set_location_assignment PIN_228 -to I[8]
+set_location_assignment PIN_227 -to I[7]
+set_location_assignment PIN_226 -to I[6]
+set_location_assignment PIN_225 -to I[5]
+set_location_assignment PIN_224 -to I[4]
+set_location_assignment PIN_223 -to I[3]
+set_location_assignment PIN_222 -to I[2]
+set_location_assignment PIN_219 -to I[1]
+set_location_assignment PIN_218 -to I[0]
+set_location_assignment PIN_140 -to O1[6]
+set_location_assignment PIN_139 -to O1[5]
+set_location_assignment PIN_138 -to O1[4]
+set_location_assignment PIN_137 -to O1[3]
+set_location_assignment PIN_136 -to O1[2]
+set_location_assignment PIN_135 -to O1[1]
+set_location_assignment PIN_134 -to O1[0]
+set_location_assignment PIN_132 -to O2[6]
+set_location_assignment PIN_131 -to O2[5]
+set_location_assignment PIN_128 -to O2[4]
+set_location_assignment PIN_127 -to O2[3]
+set_location_assignment PIN_126 -to O2[2]
+set_location_assignment PIN_125 -to O2[1]
+set_location_assignment PIN_124 -to O2[0]
+set_location_assignment PIN_122 -to O3[6]
+set_location_assignment PIN_121 -to O3[5]
+set_location_assignment PIN_120 -to O3[4]
+set_location_assignment PIN_119 -to O3[3]
+set_location_assignment PIN_118 -to O3[2]
+set_location_assignment PIN_117 -to O3[1]
+set_location_assignment PIN_116 -to O3[0]
+set_location_assignment PIN_114 -to O4[6]
+set_location_assignment PIN_113 -to O4[5]
+set_location_assignment PIN_108 -to O4[4]
+set_location_assignment PIN_107 -to O4[3]
+set_location_assignment PIN_106 -to O4[2]
+set_location_assignment PIN_105 -to O4[1]
+set_location_assignment PIN_104 -to O4[0]
+set_location_assignment PIN_2 -to I_a[15]
+set_location_assignment PIN_3 -to I_a[14]
+set_location_assignment PIN_4 -to I_a[13]
+set_location_assignment PIN_5 -to I_a[12]
+set_location_assignment PIN_6 -to I_a[11]
+set_location_assignment PIN_7 -to I_a[10]
+set_location_assignment PIN_8 -to I_a[9]
+set_location_assignment PIN_11 -to I_a[8]
+set_location_assignment PIN_12 -to I_a[7]
+set_location_assignment PIN_13 -to I_a[6]
+set_location_assignment PIN_14 -to I_a[5]
+set_location_assignment PIN_15 -to I_a[4]
+set_location_assignment PIN_16 -to I_a[3]
+set_location_assignment PIN_17 -to I_a[2]
+set_location_assignment PIN_18 -to I_a[1]
+set_location_assignment PIN_19 -to I_a[0]
+set_global_assignment -name VERILOG_FILE output_files/isZero.v
+set_global_assignment -name VERILOG_FILE output_files/ALUMethods.v
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

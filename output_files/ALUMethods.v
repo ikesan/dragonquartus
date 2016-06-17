@@ -64,7 +64,7 @@ module ALUOrer (in1,in2,out,S,V,Z,C);
 	
 endmodule
 	
-module ALUSLA ();
+module ALUSLA (in1,in2,out,S,V,Z,C);
 
 end module
 	
