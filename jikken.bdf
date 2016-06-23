@@ -935,10 +935,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 304 192)
-	(pt 304 200)
-)
-(connector
 	(pt 1072 296)
 	(pt 1088 296)
 	(bus)
