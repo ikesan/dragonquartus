@@ -308,11 +308,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt -24 216)
-	(pt -880 216)
-	(bus)
-)
-(connector
 	(pt -856 280)
 	(pt -856 296)
 	(bus)
@@ -418,6 +413,11 @@ applicable agreement for further details.
 	(text "add0[15..1],add[0]" (rect -854 264 -765 275)(font "Arial" ))
 	(pt -856 280)
 	(pt -680 280)
+	(bus)
+)
+(connector
+	(pt -880 216)
+	(pt -24 216)
 	(bus)
 )
 (junction (pt -928 344))
