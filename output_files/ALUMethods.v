@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //# out[S,V,Z,C,15:0] -> [19:0]
 module ALUinSVZC (in,S,V,Z,C,out);
   input [15:0] in;
@@ -227,3 +228,5 @@ module ALUSRA (in,d,out,S,V,Z,C);
 	assign C = ans[0];
 	assign V = 0; //always 0
 endmodule
+=======
+>>>>>>> 3b3b289087bfe94056a30c4448e258c30e5a1dc9
