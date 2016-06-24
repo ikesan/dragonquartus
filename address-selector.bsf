@@ -33,8 +33,8 @@ applicable agreement for further details.
 	(port
 		(pt 0 48)
 		(input)
-		(text "IR[15..14]" (rect 0 0 56 13)(font "Arial" (font_size 8)))
-		(text "IR[15..14]" (rect 21 43 77 56)(font "Arial" (font_size 8)))
+		(text "IR[15..0]" (rect 0 0 49 13)(font "Arial" (font_size 8)))
+		(text "IR[15..0]" (rect 21 43 70 56)(font "Arial" (font_size 8)))
 		(line (pt 0 48)(pt 16 48)(line_width 3))
 	)
 	(port
@@ -50,6 +50,13 @@ applicable agreement for further details.
 		(text "address[15..0]" (rect 0 0 81 13)(font "Arial" (font_size 8)))
 		(text "address[15..0]" (rect 90 27 171 40)(font "Arial" (font_size 8)))
 		(line (pt 192 32)(pt 176 32)(line_width 3))
+	)
+	(port
+		(pt 192 48)
+		(output)
+		(text "loadstoreflg" (rect 0 0 67 13)(font "Arial" (font_size 8)))
+		(text "loadstoreflg" (rect 104 43 171 56)(font "Arial" (font_size 8)))
+		(line (pt 192 48)(pt 176 48))
 	)
 	(drawing
 		(rectangle (rect 16 16 176 80))

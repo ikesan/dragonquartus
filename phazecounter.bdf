@@ -1376,7 +1376,15 @@ applicable agreement for further details.
 	(pt 680 240)
 )
 (connector
-	(pt 184 200)
+	(pt 456 200)
+	(pt 560 200)
+)
+(connector
+	(pt 560 200)
+	(pt 592 200)
+)
+(connector
+	(pt 360 200)
 	(pt 384 200)
 )
 (connector
@@ -1384,12 +1392,16 @@ applicable agreement for further details.
 	(pt 408 200)
 )
 (connector
-	(pt 456 200)
-	(pt 560 200)
+	(pt 184 192)
+	(pt 184 200)
 )
 (connector
-	(pt 560 200)
-	(pt 592 200)
+	(pt 360 192)
+	(pt 184 192)
+)
+(connector
+	(pt 360 192)
+	(pt 360 200)
 )
 (junction (pt 576 376))
 (junction (pt 576 504))
@@ -1424,5 +1436,5 @@ applicable agreement for further details.
 (junction (pt 760 184))
 (junction (pt 792 656))
 (junction (pt 680 240))
-(junction (pt 384 200))
 (junction (pt 560 200))
+(junction (pt 384 200))
