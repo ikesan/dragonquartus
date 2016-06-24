@@ -1,9 +1,9 @@
 module BCmd (cond,S,V,Z,C,out);
-  input [3:0] cond;
+  input [2:0] cond;
   input S,Z,C,V;
   output out;
   function select;
-    input [3:0] cond;
+    input [2:0] cond;
     input S,Z,C,V;
     case (cond)
 	 3'b000 : select = Z;

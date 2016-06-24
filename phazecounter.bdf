@@ -835,9 +835,9 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 384 224 432 256)
+	(rect 408 184 456 216)
 	(text "NOT" (rect 1 0 22 10)(font "Arial" (font_size 6)))
-	(text "clknot" (rect 3 21 33 32)(font "Arial" ))
+	(text "resnot" (rect 3 21 34 32)(font "Arial" ))
 	(port
 		(pt 0 16)
 		(input)
@@ -1340,10 +1340,6 @@ applicable agreement for further details.
 	(pt 384 200)
 )
 (connector
-	(pt 560 200)
-	(pt 592 200)
-)
-(connector
 	(pt 344 168)
 	(pt 464 168)
 )
@@ -1368,24 +1364,32 @@ applicable agreement for further details.
 	(pt 792 112)
 )
 (connector
-	(pt 184 200)
-	(pt 384 200)
-)
-(connector
-	(pt 384 200)
-	(pt 560 200)
-)
-(connector
-	(pt 432 240)
-	(pt 680 240)
-)
-(connector
 	(pt 680 200)
 	(pt 680 240)
 )
 (connector
 	(pt 680 240)
 	(pt 680 312)
+)
+(connector
+	(pt 384 240)
+	(pt 680 240)
+)
+(connector
+	(pt 184 200)
+	(pt 384 200)
+)
+(connector
+	(pt 384 200)
+	(pt 408 200)
+)
+(connector
+	(pt 456 200)
+	(pt 560 200)
+)
+(connector
+	(pt 560 200)
+	(pt 592 200)
 )
 (junction (pt 576 376))
 (junction (pt 576 504))
@@ -1418,7 +1422,7 @@ applicable agreement for further details.
 (junction (pt 776 432))
 (junction (pt 760 296))
 (junction (pt 760 184))
-(junction (pt 384 200))
-(junction (pt 560 200))
 (junction (pt 792 656))
 (junction (pt 680 240))
+(junction (pt 384 200))
+(junction (pt 560 200))

@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CGX15BF14) Path("/home/014/a0147044/processer/output_files/") File("jikken.sof") MfrSpec(OpMask(1));
+		Device PartName(EP1C6Q240) Path("/home/014/a0147044/jikken-hard/output_files/") File("jikken.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

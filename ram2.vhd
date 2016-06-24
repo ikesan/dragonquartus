@@ -91,7 +91,7 @@ BEGIN
 	GENERIC MAP (
 		address_aclr_a => "NONE",
 		indata_aclr_a => "NONE",
-		init_file => "meirei.hex",
+		init_file => "/export/home/014/a0147044/jikken-hard/3pulus2.hex",
 		intended_device_family => "Cyclone",
 		lpm_hint => "ENABLE_RUNTIME_MOD=YES,INSTANCE_NAME=NONE",
 		lpm_type => "altsyncram",
@@ -139,7 +139,7 @@ END SYN;
 -- Retrieval info: PRIVATE: JTAG_ENABLED NUMERIC "1"
 -- Retrieval info: PRIVATE: JTAG_ID STRING "NONE"
 -- Retrieval info: PRIVATE: MAXIMUM_DEPTH NUMERIC "0"
--- Retrieval info: PRIVATE: MIFfilename STRING "meirei.hex"
+-- Retrieval info: PRIVATE: MIFfilename STRING "/export/home/014/a0147044/jikken-hard/3pulus2.hex"
 -- Retrieval info: PRIVATE: NUMWORDS_A NUMERIC "4096"
 -- Retrieval info: PRIVATE: RAM_BLOCK_TYPE NUMERIC "0"
 -- Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_PORT_A NUMERIC "3"
@@ -156,7 +156,7 @@ END SYN;
 -- Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
 -- Retrieval info: CONSTANT: ADDRESS_ACLR_A STRING "NONE"
 -- Retrieval info: CONSTANT: INDATA_ACLR_A STRING "NONE"
--- Retrieval info: CONSTANT: INIT_FILE STRING "meirei.hex"
+-- Retrieval info: CONSTANT: INIT_FILE STRING "/export/home/014/a0147044/jikken-hard/3pulus2.hex"
 -- Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone"
 -- Retrieval info: CONSTANT: LPM_HINT STRING "ENABLE_RUNTIME_MOD=YES,INSTANCE_NAME=NONE"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "altsyncram"

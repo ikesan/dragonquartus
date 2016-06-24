@@ -21,7 +21,7 @@ applicable agreement for further details.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect -256 224 -88 240)
+	(rect -288 224 -120 240)
 	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
 	(text "IN[3..0]" (rect 5 0 40 11)(font "Arial" ))
 	(pt 168 8)
@@ -1320,16 +1320,6 @@ applicable agreement for further details.
 	(pt 976 264)
 )
 (connector
-	(pt -88 232)
-	(pt -24 232)
-	(bus)
-)
-(connector
-	(pt -24 232)
-	(pt 48 232)
-	(bus)
-)
-(connector
 	(text "IN[3..0]" (rect 58 216 93 227)(font "Arial" ))
 	(pt 48 232)
 	(pt 120 232)
@@ -1352,17 +1342,8 @@ applicable agreement for further details.
 	(pt -32 272)
 )
 (connector
-	(text "IN[0]" (rect -104 234 -93 257)(font "Arial" )(vertical))
-	(pt -88 232)
-	(pt -88 264)
-)
-(connector
 	(pt -88 264)
 	(pt -88 280)
-)
-(connector
-	(pt -88 264)
-	(pt 360 264)
 )
 (connector
 	(pt 360 264)
@@ -1803,6 +1784,34 @@ applicable agreement for further details.
 	(pt 1736 336)
 	(pt 1800 336)
 )
+(connector
+	(pt -24 232)
+	(pt 48 232)
+	(bus)
+)
+(connector
+	(text "IN[0]" (rect -120 226 -109 249)(font "Arial" )(vertical))
+	(pt -104 232)
+	(pt -104 264)
+)
+(connector
+	(pt -120 232)
+	(pt -104 232)
+	(bus)
+)
+(connector
+	(pt -104 232)
+	(pt -24 232)
+	(bus)
+)
+(connector
+	(pt -104 264)
+	(pt -88 264)
+)
+(connector
+	(pt -88 264)
+	(pt 360 264)
+)
 (junction (pt 360 264))
 (junction (pt -88 264))
 (junction (pt 576 264))
@@ -1873,3 +1882,4 @@ applicable agreement for further details.
 (junction (pt 1544 336))
 (junction (pt 1640 336))
 (junction (pt 1736 336))
+(junction (pt -104 232))
