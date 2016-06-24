@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 //# out[S,V,Z,C,15:0] -> [19:0]
 module ALUinSVZC (in,S,V,Z,C,out);
   input [15:0] in;
@@ -24,7 +24,7 @@ endmodule
 
 module ALUAdd (in1,in2,out,S,V,Z,C);
 	input signed  [15:0] in1,in2;
-	output signed [19:0] out;
+	output signed [15:0] out;
 	output S,Z,C,V;
 	
 	wire signed [16:0] ans;	
@@ -34,12 +34,20 @@ module ALUAdd (in1,in2,out,S,V,Z,C);
 	assign Z = !(|ans);
 	assign C = ans[16];
 	assign V = C;
+endmodule
+
+module Add (in1,in2,out);
+	input signed  [15:0] in1,in2;
+	output signed [15:0] out;
 	
+	wire signed [16:0] ans;	
+	assign ans = in1 + in2;
+	assign out = ans [15:0];
 endmodule
 	
 module ALUNothing (in1,in2,out,S,V,Z,C);
 	input signed  [15:0] in1,in2;
-	output signed [19:0] out;
+	output signed [15:0] out;
 	output S,Z,C,V;
 	
 	wire signed [16:0] ans;	
@@ -154,7 +162,7 @@ module ALUSLL (in,d,out,S,V,Z,C);
 	
 	assign out = ans [15:0];
 	assign S = ans[15];
-	assign Z = !(|ans);
+	assign Z = !( |ans);
 	assign C = ans[16];
 	assign V = 0; //always 0
 	
@@ -228,5 +236,10 @@ module ALUSRA (in,d,out,S,V,Z,C);
 	assign C = ans[0];
 	assign V = 0; //always 0
 endmodule
-=======
->>>>>>> 3b3b289087bfe94056a30c4448e258c30e5a1dc9
+
+module sign_8_16(in,out);
+   input  [ 7:0] in;
+	output [15:0] out;
+   assign out[15:0] = {(in[7] ? 8'b1:8'b0),in[7:0]};
+endmodule
+
