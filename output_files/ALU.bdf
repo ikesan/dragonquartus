@@ -2390,18 +2390,6 @@ applicable agreement for further details.
 	(pt -632 632)
 )
 (connector
-	(pt -600 488)
-	(pt -600 616)
-)
-(connector
-	(pt -584 488)
-	(pt -584 608)
-)
-(connector
-	(pt -568 488)
-	(pt -568 600)
-)
-(connector
 	(pt -424 264)
 	(pt -424 720)
 	(bus)
@@ -2665,10 +2653,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt -616 624)
-	(pt 880 624)
-)
-(connector
 	(pt 880 624)
 	(pt 880 1096)
 )
@@ -2706,10 +2690,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1224 616)
-	(pt 1224 1096)
-)
-(connector
 	(pt 1224 1096)
 	(pt 1248 1096)
 )
@@ -2721,10 +2701,6 @@ applicable agreement for further details.
 (connector
 	(pt 1248 1096)
 	(pt 1248 1112)
-)
-(connector
-	(pt -600 616)
-	(pt 1224 616)
 )
 (connector
 	(pt 1264 1112)
@@ -2742,10 +2718,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1400 608)
-	(pt 1400 1096)
-)
-(connector
 	(pt 1424 1096)
 	(pt 1400 1096)
 )
@@ -2757,10 +2729,6 @@ applicable agreement for further details.
 (connector
 	(pt 1424 1096)
 	(pt 1424 1112)
-)
-(connector
-	(pt -584 608)
-	(pt 1400 608)
 )
 (connector
 	(pt 1440 280)
@@ -2786,14 +2754,6 @@ applicable agreement for further details.
 	(pt 1680 304)
 	(pt 1680 720)
 	(bus)
-)
-(connector
-	(pt 1584 600)
-	(pt 1584 1120)
-)
-(connector
-	(pt -568 600)
-	(pt 1584 600)
 )
 (connector
 	(pt 1224 1352)
@@ -2954,10 +2914,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt -616 488)
-	(pt -616 624)
-)
-(connector
 	(pt -520 896)
 	(pt -504 896)
 )
@@ -3115,6 +3071,50 @@ applicable agreement for further details.
 (connector
 	(pt -488 864)
 	(pt -488 896)
+)
+(connector
+	(pt 1224 1096)
+	(pt 1224 616)
+)
+(connector
+	(pt 1224 616)
+	(pt -584 616)
+)
+(connector
+	(pt 880 624)
+	(pt -600 624)
+)
+(connector
+	(pt -600 624)
+	(pt -600 488)
+)
+(connector
+	(pt 1400 1096)
+	(pt 1400 608)
+)
+(connector
+	(pt 1400 608)
+	(pt -568 608)
+)
+(connector
+	(pt 1584 1120)
+	(pt 1584 600)
+)
+(connector
+	(pt 1584 600)
+	(pt -552 600)
+)
+(connector
+	(pt -584 616)
+	(pt -584 488)
+)
+(connector
+	(pt -568 608)
+	(pt -568 488)
+)
+(connector
+	(pt -552 600)
+	(pt -552 488)
 )
 (junction (pt -424 264))
 (junction (pt -408 280))
