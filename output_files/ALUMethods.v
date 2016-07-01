@@ -22,6 +22,58 @@ module ALUoutSVZC (in,S,V,Z,C,out);
   assign C = in[19];
 endmodule
 
+module ALULi (d,out,S,V,Z,C);
+	input signed  [7:0]   d;
+	output signed [15:0] out;
+	output S,Z,C,V;
+	
+	assign out[15:0] = d[7] ? {8'b1111_1111 ,d[7:0]} :{8'b0000_0000,d[7:0]} ;
+	assign S = out[15];
+	assign Z = !(|out);
+	assign C = 0;
+	assign V = 0;
+endmodule
+
+module ALUAddi (in,d,out,S,V,Z,C);
+	input signed  [15:0] in;
+	input signed  [7:0]   d;
+	output signed [15:0] out;
+	output S,Z,C,V;
+	wire signed [16:0] ans;	
+	wire signed [15:0] wired;
+	assign wired = d[7] ? {8'hFF,d[7:0]} : {8'h00,d[7:0]} ;
+	assign ans = in + wired;
+	assign out = ans [15:0];
+	assign S = ans[15];
+	assign Z = !(|ans);
+	assign C = ans[16];
+	assign V = C;
+endmodule
+
+module addrAdd (in,d,out);
+	input [15:0] in;
+	input signed  [7:0]   d;
+	output  [15:0] out;
+	wire [16:0] ans;	
+	assign ans = in + d + 16'h0001 ;
+	assign out = ans [15:0];
+endmodule
+
+module ALUSubi (in,d,out,S,V,Z,C);
+	input signed  [15:0] in;
+	input signed  [7:0]   d;
+	output signed [15:0] out;
+	output S,Z,C,V;
+	
+	wire signed [16:0] ans;	
+	assign ans = in - d;
+	assign out = ans [15:0];
+	assign S = ans[15];
+	assign Z = !(|ans);
+	assign C = ans[16];
+	assign V = C;
+endmodule
+
 module ALUAdd (in1,in2,out,S,V,Z,C);
 	input signed  [15:0] in1,in2;
 	output signed [15:0] out;
@@ -45,20 +97,6 @@ module Add (in1,in2,out);
 	assign out = ans [15:0];
 endmodule
 	
-module ALUNothing (in1,in2,out,S,V,Z,C);
-	input signed  [15:0] in1,in2;
-	output signed [15:0] out;
-	output S,Z,C,V;
-	
-	wire signed [16:0] ans;	
-	assign ans = in1 + in2;
-	assign out = ans [15:0];
-	assign S = ans[15];
-	assign Z = !(|ans);
-	assign C = ans[16];
-	assign V = C;
-	
-endmodule
 	
 //#
 module ALUSub (in1,in2,out,S,V,Z,C);
