@@ -84,6 +84,19 @@ set_location_assignment PIN_106 -to 0led3[2]
 set_location_assignment PIN_105 -to 0led3[1]
 set_location_assignment PIN_104 -to 0led3[0]
 
+set_location_assignment PIN_133 -to pin_name1
+set_location_assignment PIN_58 -to pin_name2
+set_location_assignment PIN_59 -to pin_name3
+set_location_assignment PIN_60 -to pin_name6
+set_location_assignment PIN_61 -to pin_name7
+set_location_assignment PIN_62 -to pin_name8
+set_location_assignment PIN_63 -to pin_name9
+set_location_assignment PIN_64 -to pin_name10
+set_location_assignment PIN_119 -to pin_name4
+set_location_assignment PIN_120 -to pin_name5
+set_global_assignment -name BDF_FILE output_files/LI_B.bdf
+set_global_assignment -name VHDL_FILE ram2.vhd
+set_global_assignment -name BDF_FILE mergeSZCV.bdf
 set_global_assignment -name BDF_FILE SZCVregester.bdf
 set_global_assignment -name BDF_FILE 01selector.bdf
 set_global_assignment -name VERILOG_FILE BCmd.v
@@ -141,7 +154,6 @@ set_global_assignment -name BDF_FILE "address-selector.bdf"
 set_global_assignment -name HEX_FILE 3pulus2.hex
 set_global_assignment -name CDF_FILE output_files/Chain1.cdf
 set_global_assignment -name CDF_FILE output_files/Chain7.cdf
-set_location_assignment PIN_133 -to pin_name1
 set_global_assignment -name CDF_FILE output_files/Chain11.cdf
 set_global_assignment -name CDF_FILE output_files/Chain14.cdf
 set_global_assignment -name CDF_FILE output_files/Chain15.cdf
@@ -153,15 +165,6 @@ set_global_assignment -name CDF_FILE output_files/Chain29.cdf
 set_global_assignment -name CDF_FILE output_files/Chain32.cdf
 set_global_assignment -name BDF_FILE wrencheck.bdf
 set_global_assignment -name HEX_FILE addsub.hex
-set_location_assignment PIN_58 -to pin_name2
-set_location_assignment PIN_59 -to pin_name3
-set_location_assignment PIN_60 -to pin_name6
-set_location_assignment PIN_61 -to pin_name7
-set_location_assignment PIN_62 -to pin_name8
-set_location_assignment PIN_63 -to pin_name9
-set_location_assignment PIN_64 -to pin_name10
 set_global_assignment -name CDF_FILE output_files/Chain21.cdf
-set_location_assignment PIN_119 -to pin_name4
-set_location_assignment PIN_120 -to pin_name5
 set_global_assignment -name BDF_FILE output_files/2add.bdf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

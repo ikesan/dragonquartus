@@ -89,16 +89,16 @@ applicable agreement for further details.
 	(port
 		(pt 184 80)
 		(output)
-		(text "B" (rect 0 0 10 13)(font "Arial" (font_size 8)))
-		(text "B" (rect 153 75 163 88)(font "Arial" (font_size 8)))
-		(line (pt 184 80)(pt 168 80))
+		(text "OutR[15..0]" (rect 0 0 66 13)(font "Arial" (font_size 8)))
+		(text "OutR[15..0]" (rect 97 75 163 88)(font "Arial" (font_size 8)))
+		(line (pt 184 80)(pt 168 80)(line_width 3))
 	)
 	(port
 		(pt 184 96)
 		(output)
-		(text "OutR[15..0]" (rect 0 0 66 13)(font "Arial" (font_size 8)))
-		(text "OutR[15..0]" (rect 97 91 163 104)(font "Arial" (font_size 8)))
-		(line (pt 184 96)(pt 168 96)(line_width 3))
+		(text "B" (rect 0 0 10 13)(font "Arial" (font_size 8)))
+		(text "B" (rect 153 91 163 104)(font "Arial" (font_size 8)))
+		(line (pt 184 96)(pt 168 96))
 	)
 	(drawing
 		(rectangle (rect 16 16 168 144))
