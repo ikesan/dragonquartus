@@ -61,9 +61,16 @@ applicable agreement for further details.
 	(port
 		(pt 0 112)
 		(input)
-		(text "iC" (rect 0 0 14 13)(font "Arial" (font_size 8)))
-		(text "iC" (rect 21 107 35 120)(font "Arial" (font_size 8)))
+		(text "ena" (rect 0 0 22 13)(font "Arial" (font_size 8)))
+		(text "ena" (rect 21 107 43 120)(font "Arial" (font_size 8)))
 		(line (pt 0 112)(pt 16 112))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "iC" (rect 0 0 14 13)(font "Arial" (font_size 8)))
+		(text "iC" (rect 21 123 35 136)(font "Arial" (font_size 8)))
+		(line (pt 0 128)(pt 16 128))
 	)
 	(port
 		(pt 128 32)

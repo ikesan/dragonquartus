@@ -67,6 +67,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 984 192 1040 208))
 )
 (pin
 	(output)
@@ -83,10 +84,11 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 984 304 1040 320))
 )
 (pin
 	(output)
-	(rect 824 424 1000 440)
+	(rect 840 488 1016 504)
 	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
 	(text "p3" (rect 90 0 104 11)(font "Arial" ))
 	(pt 0 8)
@@ -99,6 +101,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 1016 504 1072 520))
 )
 (pin
 	(output)
@@ -118,7 +121,7 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 816 648 992 664)
+	(rect 856 648 1032 664)
 	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
 	(text "p5" (rect 90 0 104 11)(font "Arial" ))
 	(pt 0 8)
@@ -429,32 +432,6 @@ applicable agreement for further details.
 		(arc (pt 49 24)(pt 25 13)(rect -6 13 57 76))
 		(arc (pt 25 35)(pt 49 24)(rect -6 -27 57 36))
 	)
-)
-(symbol
-	(rect 328 280 360 328)
-	(text "NOT" (rect 22 1 32 22)(font "Arial" (font_size 6))(vertical))
-	(text "notres" (rect 0 3 11 34)(font "Arial" )(vertical))
-	(port
-		(pt 16 0)
-		(input)
-		(text "IN" (rect 2 7 16 18)(font "Courier New" (bold))(invisible))
-		(text "IN" (rect 14 2 25 16)(font "Courier New" (bold))(vertical)(invisible))
-		(line (pt 16 0)(pt 16 13))
-	)
-	(port
-		(pt 16 48)
-		(output)
-		(text "OUT" (rect 32 7 53 18)(font "Courier New" (bold))(invisible))
-		(text "OUT" (rect 14 32 25 53)(font "Courier New" (bold))(vertical)(invisible))
-		(line (pt 16 39)(pt 16 48))
-	)
-	(drawing
-		(line (pt 7 13)(pt 25 13))
-		(line (pt 25 13)(pt 16 31))
-		(line (pt 7 13)(pt 16 31))
-		(circle (rect 12 31 20 39))
-	)
-	(rotate270)
 )
 (symbol
 	(rect 448 312 512 360)
@@ -835,9 +812,34 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 408 184 456 216)
+	(rect 384 224 432 256)
 	(text "NOT" (rect 1 0 22 10)(font "Arial" (font_size 6)))
 	(text "resnot" (rect 3 21 34 32)(font "Arial" ))
+	(port
+		(pt 0 16)
+		(input)
+		(text "IN" (rect 2 7 16 18)(font "Courier New" (bold))(invisible))
+		(text "IN" (rect 2 7 16 18)(font "Courier New" (bold))(invisible))
+		(line (pt 0 16)(pt 13 16))
+	)
+	(port
+		(pt 48 16)
+		(output)
+		(text "OUT" (rect 32 7 53 18)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 32 7 53 18)(font "Courier New" (bold))(invisible))
+		(line (pt 39 16)(pt 48 16))
+	)
+	(drawing
+		(line (pt 13 25)(pt 13 7))
+		(line (pt 13 7)(pt 31 16))
+		(line (pt 13 25)(pt 31 16))
+		(circle (rect 31 12 39 20))
+	)
+)
+(symbol
+	(rect 416 152 464 184)
+	(text "NOT" (rect 1 0 22 10)(font "Arial" (font_size 6)))
+	(text "notres" (rect 3 21 34 32)(font "Arial" ))
 	(port
 		(pt 0 16)
 		(input)
@@ -988,14 +990,6 @@ applicable agreement for further details.
 	(pt 464 144)
 )
 (connector
-	(pt 344 168)
-	(pt 344 280)
-)
-(connector
-	(pt 184 168)
-	(pt 344 168)
-)
-(connector
 	(pt 528 152)
 	(pt 592 152)
 )
@@ -1026,10 +1020,6 @@ applicable agreement for further details.
 (connector
 	(pt 344 568)
 	(pt 456 568)
-)
-(connector
-	(pt 344 328)
-	(pt 344 448)
 )
 (connector
 	(pt 344 448)
@@ -1084,32 +1074,12 @@ applicable agreement for further details.
 	(pt 584 656)
 )
 (connector
-	(pt 648 656)
-	(pt 712 656)
-)
-(connector
-	(pt 648 544)
-	(pt 696 544)
-)
-(connector
-	(pt 656 432)
-	(pt 704 432)
-)
-(connector
-	(pt 656 304)
-	(pt 688 304)
-)
-(connector
 	(pt 688 304)
 	(pt 688 296)
 )
 (connector
 	(pt 696 296)
 	(pt 688 296)
-)
-(connector
-	(pt 656 176)
-	(pt 696 176)
 )
 (connector
 	(pt 696 176)
@@ -1276,10 +1246,6 @@ applicable agreement for further details.
 	(pt 456 464)
 )
 (connector
-	(pt 776 432)
-	(pt 776 512)
-)
-(connector
 	(pt 776 512)
 	(pt 440 512)
 )
@@ -1290,14 +1256,6 @@ applicable agreement for further details.
 (connector
 	(pt 440 584)
 	(pt 456 584)
-)
-(connector
-	(pt 768 544)
-	(pt 768 616)
-)
-(connector
-	(pt 768 616)
-	(pt 440 616)
 )
 (connector
 	(pt 440 616)
@@ -1312,24 +1270,8 @@ applicable agreement for further details.
 	(pt 768 544)
 )
 (connector
-	(pt 768 544)
-	(pt 824 544)
-)
-(connector
 	(pt 768 432)
 	(pt 776 432)
-)
-(connector
-	(pt 776 432)
-	(pt 824 432)
-)
-(connector
-	(pt 760 296)
-	(pt 808 296)
-)
-(connector
-	(pt 760 184)
-	(pt 808 184)
 )
 (connector
 	(pt 680 312)
@@ -1340,22 +1282,6 @@ applicable agreement for further details.
 	(pt 384 200)
 )
 (connector
-	(pt 344 168)
-	(pt 464 168)
-)
-(connector
-	(pt 792 656)
-	(pt 792 112)
-)
-(connector
-	(pt 776 656)
-	(pt 792 656)
-)
-(connector
-	(pt 792 656)
-	(pt 816 656)
-)
-(connector
 	(pt 440 112)
 	(pt 440 144)
 )
@@ -1364,32 +1290,8 @@ applicable agreement for further details.
 	(pt 792 112)
 )
 (connector
-	(pt 680 200)
-	(pt 680 240)
-)
-(connector
-	(pt 680 240)
-	(pt 680 312)
-)
-(connector
-	(pt 384 240)
-	(pt 680 240)
-)
-(connector
-	(pt 456 200)
-	(pt 560 200)
-)
-(connector
 	(pt 560 200)
 	(pt 592 200)
-)
-(connector
-	(pt 360 200)
-	(pt 384 200)
-)
-(connector
-	(pt 384 200)
-	(pt 408 200)
 )
 (connector
 	(pt 184 192)
@@ -1403,6 +1305,182 @@ applicable agreement for further details.
 	(pt 360 192)
 	(pt 360 200)
 )
+(connector
+	(pt 360 200)
+	(pt 384 200)
+)
+(connector
+	(pt 384 200)
+	(pt 560 200)
+)
+(connector
+	(pt 432 240)
+	(pt 680 240)
+)
+(connector
+	(pt 680 200)
+	(pt 680 240)
+)
+(connector
+	(pt 680 240)
+	(pt 680 312)
+)
+(connector
+	(pt 800 184)
+	(pt 800 48)
+)
+(connector
+	(pt 808 184)
+	(pt 800 184)
+)
+(connector
+	(pt 664 48)
+	(pt 664 176)
+)
+(connector
+	(pt 800 48)
+	(pt 664 48)
+)
+(connector
+	(pt 656 176)
+	(pt 664 176)
+)
+(connector
+	(pt 664 176)
+	(pt 696 176)
+)
+(connector
+	(pt 808 296)
+	(pt 800 296)
+)
+(connector
+	(pt 800 296)
+	(pt 800 360)
+)
+(connector
+	(pt 664 360)
+	(pt 800 360)
+)
+(connector
+	(pt 664 360)
+	(pt 664 304)
+)
+(connector
+	(pt 656 304)
+	(pt 664 304)
+)
+(connector
+	(pt 664 304)
+	(pt 688 304)
+)
+(connector
+	(pt 776 432)
+	(pt 776 512)
+)
+(connector
+	(pt 664 496)
+	(pt 664 432)
+)
+(connector
+	(pt 656 432)
+	(pt 664 432)
+)
+(connector
+	(pt 664 432)
+	(pt 704 432)
+)
+(connector
+	(pt 664 496)
+	(pt 840 496)
+)
+(connector
+	(pt 768 544)
+	(pt 768 616)
+)
+(connector
+	(pt 440 616)
+	(pt 768 616)
+)
+(connector
+	(pt 824 544)
+	(pt 816 544)
+)
+(connector
+	(pt 816 544)
+	(pt 816 608)
+)
+(connector
+	(pt 816 608)
+	(pt 664 608)
+)
+(connector
+	(pt 664 608)
+	(pt 664 544)
+)
+(connector
+	(pt 648 544)
+	(pt 664 544)
+)
+(connector
+	(pt 664 544)
+	(pt 696 544)
+)
+(connector
+	(pt 776 656)
+	(pt 792 656)
+)
+(connector
+	(pt 848 656)
+	(pt 848 680)
+)
+(connector
+	(pt 856 656)
+	(pt 848 656)
+)
+(connector
+	(pt 792 112)
+	(pt 792 656)
+)
+(connector
+	(pt 784 680)
+	(pt 848 680)
+)
+(connector
+	(pt 784 680)
+	(pt 784 736)
+)
+(connector
+	(pt 664 736)
+	(pt 784 736)
+)
+(connector
+	(pt 664 736)
+	(pt 664 656)
+)
+(connector
+	(pt 648 656)
+	(pt 664 656)
+)
+(connector
+	(pt 664 656)
+	(pt 712 656)
+)
+(connector
+	(pt 184 168)
+	(pt 344 168)
+)
+(connector
+	(pt 344 168)
+	(pt 416 168)
+)
+(connector
+	(pt 344 168)
+	(pt 344 328)
+)
+(connector
+	(pt 344 328)
+	(pt 344 448)
+)
 (junction (pt 576 376))
 (junction (pt 576 504))
 (junction (pt 552 368))
@@ -1414,8 +1492,6 @@ applicable agreement for further details.
 (junction (pt 552 256))
 (junction (pt 576 256))
 (junction (pt 624 256))
-(junction (pt 344 168))
-(junction (pt 344 328))
 (junction (pt 344 448))
 (junction (pt 344 568))
 (junction (pt 680 312))
@@ -1430,11 +1506,13 @@ applicable agreement for further details.
 (junction (pt 728 376))
 (junction (pt 728 256))
 (junction (pt 624 136))
-(junction (pt 768 544))
-(junction (pt 776 432))
-(junction (pt 760 296))
-(junction (pt 760 184))
-(junction (pt 792 656))
-(junction (pt 680 240))
 (junction (pt 560 200))
 (junction (pt 384 200))
+(junction (pt 680 240))
+(junction (pt 664 176))
+(junction (pt 664 304))
+(junction (pt 664 432))
+(junction (pt 664 544))
+(junction (pt 664 656))
+(junction (pt 344 168))
+(junction (pt 344 328))
