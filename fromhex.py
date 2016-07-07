@@ -49,7 +49,7 @@ def getCmd(line):
         rb = line[5:8]
         d = line[8:16]
         op2 = {"00":"ld","01":"st"}[line[0:2]]
-        return op2 + " "+ reg(ra) + "," + bin8toNum(d) +   + "(" + reg(rb) +  ")"
+        return op2 + " "+ reg(ra) + "," + bin8toNum(d)  + "(" + reg(rb) +  ")"
     if line[0:2] == "10":
         op2 = line[2:5]
         rb = line[5:8]
