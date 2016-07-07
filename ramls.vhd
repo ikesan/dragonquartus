@@ -4,7 +4,7 @@
 -- MODULE: altsyncram 
 
 -- ============================================================
--- File Name: ram2.vhd
+-- File Name: ramls.vhd
 -- Megafunction Name(s):
 -- 			altsyncram
 --
@@ -39,7 +39,7 @@ USE ieee.std_logic_1164.all;
 LIBRARY altera_mf;
 USE altera_mf.all;
 
-ENTITY ram2 IS
+ENTITY ramls IS
 	PORT
 	(
 		address		: IN STD_LOGIC_VECTOR (10 DOWNTO 0);
@@ -48,10 +48,10 @@ ENTITY ram2 IS
 		wren		: IN STD_LOGIC ;
 		q		: OUT STD_LOGIC_VECTOR (15 DOWNTO 0)
 	);
-END ram2;
+END ramls;
 
 
-ARCHITECTURE SYN OF ram2 IS
+ARCHITECTURE SYN OF ramls IS
 
 	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (15 DOWNTO 0);
 
@@ -61,7 +61,6 @@ ARCHITECTURE SYN OF ram2 IS
 	GENERIC (
 		address_aclr_a		: STRING;
 		indata_aclr_a		: STRING;
-		init_file		: STRING;
 		intended_device_family		: STRING;
 		lpm_hint		: STRING;
 		lpm_type		: STRING;
@@ -91,14 +90,13 @@ BEGIN
 	GENERIC MAP (
 		address_aclr_a => "NONE",
 		indata_aclr_a => "NONE",
-		init_file => "/export/home/014/a0147044/jikken-hard/3pulus2.hex",
 		intended_device_family => "Cyclone",
 		lpm_hint => "ENABLE_RUNTIME_MOD=YES,INSTANCE_NAME=NONE",
 		lpm_type => "altsyncram",
 		numwords_a => 2048,
 		operation_mode => "SINGLE_PORT",
 		outdata_aclr_a => "NONE",
-		outdata_reg_a => "CLOCK0",
+		outdata_reg_a => "UNREGISTERED",
 		power_up_uninitialized => "FALSE",
 		widthad_a => 11,
 		width_a => 16,
@@ -127,7 +125,7 @@ END SYN;
 -- Retrieval info: PRIVATE: AclrOutput NUMERIC "0"
 -- Retrieval info: PRIVATE: BYTE_ENABLE NUMERIC "0"
 -- Retrieval info: PRIVATE: BYTE_SIZE NUMERIC "8"
--- Retrieval info: PRIVATE: BlankMemory NUMERIC "0"
+-- Retrieval info: PRIVATE: BlankMemory NUMERIC "1"
 -- Retrieval info: PRIVATE: CLOCK_ENABLE_INPUT_A NUMERIC "0"
 -- Retrieval info: PRIVATE: CLOCK_ENABLE_OUTPUT_A NUMERIC "0"
 -- Retrieval info: PRIVATE: Clken NUMERIC "0"
@@ -139,13 +137,13 @@ END SYN;
 -- Retrieval info: PRIVATE: JTAG_ENABLED NUMERIC "1"
 -- Retrieval info: PRIVATE: JTAG_ID STRING "NONE"
 -- Retrieval info: PRIVATE: MAXIMUM_DEPTH NUMERIC "0"
--- Retrieval info: PRIVATE: MIFfilename STRING "/export/home/014/a0147044/jikken-hard/3pulus2.hex"
+-- Retrieval info: PRIVATE: MIFfilename STRING ""
 -- Retrieval info: PRIVATE: NUMWORDS_A NUMERIC "2048"
 -- Retrieval info: PRIVATE: RAM_BLOCK_TYPE NUMERIC "0"
 -- Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_PORT_A NUMERIC "3"
 -- Retrieval info: PRIVATE: RegAddr NUMERIC "1"
 -- Retrieval info: PRIVATE: RegData NUMERIC "1"
--- Retrieval info: PRIVATE: RegOutput NUMERIC "1"
+-- Retrieval info: PRIVATE: RegOutput NUMERIC "0"
 -- Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
 -- Retrieval info: PRIVATE: SingleClock NUMERIC "1"
 -- Retrieval info: PRIVATE: UseDQRAM NUMERIC "1"
@@ -156,14 +154,13 @@ END SYN;
 -- Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
 -- Retrieval info: CONSTANT: ADDRESS_ACLR_A STRING "NONE"
 -- Retrieval info: CONSTANT: INDATA_ACLR_A STRING "NONE"
--- Retrieval info: CONSTANT: INIT_FILE STRING "/export/home/014/a0147044/jikken-hard/3pulus2.hex"
 -- Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone"
 -- Retrieval info: CONSTANT: LPM_HINT STRING "ENABLE_RUNTIME_MOD=YES,INSTANCE_NAME=NONE"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "altsyncram"
 -- Retrieval info: CONSTANT: NUMWORDS_A NUMERIC "2048"
 -- Retrieval info: CONSTANT: OPERATION_MODE STRING "SINGLE_PORT"
 -- Retrieval info: CONSTANT: OUTDATA_ACLR_A STRING "NONE"
--- Retrieval info: CONSTANT: OUTDATA_REG_A STRING "CLOCK0"
+-- Retrieval info: CONSTANT: OUTDATA_REG_A STRING "UNREGISTERED"
 -- Retrieval info: CONSTANT: POWER_UP_UNINITIALIZED STRING "FALSE"
 -- Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "11"
 -- Retrieval info: CONSTANT: WIDTH_A NUMERIC "16"
@@ -179,9 +176,9 @@ END SYN;
 -- Retrieval info: CONNECT: @data_a 0 0 16 0 data 0 0 16 0
 -- Retrieval info: CONNECT: @wren_a 0 0 0 0 wren 0 0 0 0
 -- Retrieval info: CONNECT: q 0 0 16 0 @q_a 0 0 16 0
--- Retrieval info: GEN_FILE: TYPE_NORMAL ram2.vhd TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL ram2.inc FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL ram2.cmp TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL ram2.bsf TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL ram2_inst.vhd FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL ramls.vhd TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL ramls.inc FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL ramls.cmp TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL ramls.bsf TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL ramls_inst.vhd FALSE
 -- Retrieval info: LIB_FILE: altera_mf
