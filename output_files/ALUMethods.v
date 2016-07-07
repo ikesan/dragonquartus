@@ -50,12 +50,29 @@ module ALUAddi (in,d,out,S,V,Z,C);
 	assign V = C;
 endmodule
 
+module ALUPCAddi (in,d,out,S,V,Z,C);
+	input [15:0] in;
+	input signed  [7:0]   d;
+	output [15:0] out;
+	output S,Z,C,V;
+	wire [16:0] ans;	
+	wire signed [15:0] wired;
+	assign wired = d[7] ? {8'hFF,d[7:0]} : {8'h00,d[7:0]} ;
+	assign ans = in + wired + 16'h0001;
+	assign out = ans [15:0];
+	assign S = ans[15];
+	assign Z = !(|ans);
+	assign C = ans[16];
+	assign V = C;
+endmodule
+
+
 module addrAdd (in,d,out);
 	input [15:0] in;
 	input signed  [7:0]   d;
 	output  [15:0] out;
 	wire [16:0] ans;	
-	assign ans = in + d + 16'h0001 ;
+	assign ans = in + d ;
 	assign out = ans [15:0];
 endmodule
 
