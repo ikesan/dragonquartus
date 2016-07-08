@@ -33,4 +33,5 @@ def getCmd(line):
 if __name__ == "__main__" :         
     while True:
         line = sys.stdin.readline()
+        if not line : exit(0)
         print(getCmd(line))

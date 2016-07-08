@@ -28,7 +28,7 @@ bin4_num = reverseDic(num_bin4)
 cmd_bin = {
     "alu" : { "add":"0000","sub":"0001","and":"0010","or":"0011","xor":"0100","cmp":"0101","mov":"0110" },
     "shift" : { "sll":"1000","slr":"1001","srl":"1010","sra":"1011" },
-    "imm" : { "li":"000","addi":"001","subi":"010" },
+    "imm" : { "li":"000","addi":"001","subi":"010","cmpi":"011" },
     "addr" : { "ld":"00","st":"01" },
     "b": { "be":"000","blt":"001","ble":"010","bne":"011" }
 }
@@ -55,9 +55,9 @@ def getBin(line):
     if m : return bin2hex("11" + reg[m[2]] + reg[m[1]]+ cmd_bin["alu"][m[0]] + "0000")
     m = getMatched(r'(sll|slr|srl|sra)[ ,]r?([0-7])[ ,]([0-9a-f])')
     if m : return bin2hex("11" + "000" + reg[m[1]]+cmd_bin["shift"][m[0]] + d1[m[2]])
-    m = getMatched(r'(li|addi|subi)[ ,]r?([0-7])[ ,]([0-9a-f]{1,2})')
+    m = getMatched(r'(li|addi|subi|cmpi)[ ,]r?([0-7])[ ,]([0-9a-f]{1,2})')
     if m : return bin2hex("10" + cmd_bin["imm"][m[0]] + reg[m[1]] + d2(m[2]))
-    m = getMatched(r'(ld|st)[ ,]r?([0-7])[ ,]([0-9a-f]{2})\(r?([0-7])\)')
+    m = getMatched(r'(ld|st)[ ,]r?([0-7])[ ,]([0-9a-f]{1,2})\(r?([0-7])\)')
     if m : return bin2hex(cmd_bin["addr"][m[0]] + reg[m[1]] + reg[m[3]] + d2(m[2]))
     m = getMatched(r'(b|be|blt|ble|bne)[ ,]([0-9a-f]{1,2})')
     if m : 
@@ -67,11 +67,32 @@ def getBin(line):
     if m :        
         if m[0] == "in": return bin2hex("11"+"000"+reg[m[1]] + "1100"+"0000")
         if m[0] =="out": return bin2hex("11"+reg[m[1]]+"000" + "1101"+"0000")
-        assert(0)
     if re.findall(r'(hlt)',line,re.I) : return bin2hex("1111""1111""1111""1111")
-    assert(0)
+    ## 以下 簡略表記
+    m = getMatched(r'r?([0-7])\s*=\s*([0-9a-f]{1,2})')
+    if m : return getBin("li r" + m[0] + " " + m[1])
+    m = getMatched(r'r?([0-7])\s*\+=\s*([0-9a-f]{1,2})')
+    if m : return getBin("addi r" + m[0] + " " + m[1])
+    m = getMatched(r'r?([0-7])\s*-=\s*([0-9a-f]{1,2})')
+    if m : return getBin("subi r" + m[0] + " " + m[1])
+    m = getMatched(r'r?([0-7])\s*=\s*r?([0-7])')
+    if m : return getBin("mov r" + m[0] + " r" + m[1])
+    m = getMatched(r'r?([0-7])\s*\+=\s*r?([0-7])')
+    if m : return getBin("add r" + m[0] + " r" + m[1])
+    m = getMatched(r'r?([0-7])\s*-=\s*r?([0-7])')
+    if m : return getBin("sub r" + m[0] + " r" + m[1])
+    m = getMatched(r'r?([0-7])\s*=\s*mem\[r?([0-7])\s*\+\s*([0-9a-f]{1,2})\]')
+    if m : return getBin("ld r" + m[0] + " "+ m[2]+"(r" +m[1]+")")
+    m = getMatched(r'mem\[r?([0-7])\s*\+\s*([0-9a-f]{1,2})\]\s*=\s*r?([0-7])')
+    if m : return getBin("st r" + m[2] + " "+ m[1]+"(r" +m[0]+")")
+    m = getMatched(r'r?([0-7])\s*-\s*([0-9a-f]{1,2})')
+    if m : return getBin("cmpi r" + m[0] + " " + m[1])
+    m = getMatched(r'r([0-7])\s*-\s*r([0-7])')
+    if m : return getBin("cmp r" + m[0] + " r" + m[1])
+    return "### ERROR ###"
 
 if __name__ == "__main__" :
     while True:
         line = sys.stdin.readline()
+        if not line : exit(0)
         print(getBin(line))
