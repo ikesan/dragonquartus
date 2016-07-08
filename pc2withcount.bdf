@@ -34,10 +34,11 @@ applicable agreement for further details.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 149 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect -432 488 -384 504))
 )
 (pin
 	(input)
-	(rect -816 352 -648 368)
+	(rect -752 312 -584 328)
 	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
 	(text "branch" (rect 5 0 40 11)(font "Arial" ))
 	(pt 168 8)
@@ -53,7 +54,7 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect -656 432 -488 448)
+	(rect -752 328 -584 344)
 	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
 	(text "DR[15..0]" (rect 5 0 52 11)(font "Arial" ))
 	(pt 168 8)
@@ -82,6 +83,7 @@ applicable agreement for further details.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 149 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect -464 432 -408 448))
 )
 (pin
 	(input)
@@ -217,16 +219,6 @@ applicable agreement for further details.
 	)
 )
 (connector
-	(pt -504 264)
-	(pt -432 264)
-	(bus)
-)
-(connector
-	(pt -432 264)
-	(pt -432 304)
-	(bus)
-)
-(connector
 	(pt -248 304)
 	(pt -208 304)
 	(bus)
@@ -235,22 +227,6 @@ applicable agreement for further details.
 	(pt -24 304)
 	(pt -24 216)
 	(bus)
-)
-(connector
-	(pt -648 360)
-	(pt -496 360)
-)
-(connector
-	(pt -496 360)
-	(pt -496 328)
-)
-(connector
-	(pt -496 328)
-	(pt -432 328)
-)
-(connector
-	(pt -432 328)
-	(pt -432 320)
 )
 (connector
 	(pt -216 480)
@@ -264,17 +240,6 @@ applicable agreement for further details.
 (connector
 	(pt -24 304)
 	(pt 40 304)
-	(bus)
-)
-(connector
-	(pt -432 336)
-	(pt -488 336)
-	(bus)
-)
-(connector
-	(text "DR[15..0]" (rect -504 415 -493 462)(font "Arial" )(vertical))
-	(pt -488 336)
-	(pt -488 440)
 	(bus)
 )
 (connector
@@ -314,5 +279,24 @@ applicable agreement for further details.
 	(pt -24 216)
 	(pt -672 216)
 	(bus)
+)
+(connector
+	(pt -584 336)
+	(pt -432 336)
+	(bus)
+)
+(connector
+	(pt -504 264)
+	(pt -504 304)
+	(bus)
+)
+(connector
+	(pt -432 304)
+	(pt -504 304)
+	(bus)
+)
+(connector
+	(pt -432 320)
+	(pt -584 320)
 )
 (junction (pt -24 304))
