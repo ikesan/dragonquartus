@@ -80,8 +80,8 @@ module VHDLALU (AR,BR,d,opselect,isValid,inputFlag,outputFlag,iRdWriteFlag,SZCVW
   assign inputFlag  = (opselect == 4'b1100) & isValid;
   assign outputFlag = (opselect == 4'b1101) & isValid;
   assign HaltFlag   = (opselect == 4'b1111) & isValid;
-  assign SZCVWriteFlag = (opselect != 4'b1111 | opselect != 4'b1101) & isValid;
-  assign iRdWriteFlag =  (opselect != 4'b1111 | opselect != 4'b1101 | opselect != 4'b0101) & isValid;
+  assign SZCVWriteFlag = (opselect != 4'b1111 & opselect != 4'b1101) & isValid;
+  assign iRdWriteFlag =  (opselect != 4'b1111 & opselect != 4'b1101 & opselect != 4'b0101) & isValid;
   assign Out = wOp[15:0] & (isValid ? 16'hffff:16'h0000);
   assign S = wOp[15] & isValid;
   assign Z = (wOp[15:0] == 16'h0000)& isValid;

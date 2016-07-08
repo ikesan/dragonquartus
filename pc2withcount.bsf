@@ -33,16 +33,16 @@ applicable agreement for further details.
 	(port
 		(pt 0 48)
 		(input)
-		(text "clk" (rect 0 0 18 13)(font "Arial" (font_size 8)))
-		(text "clk" (rect 21 43 39 56)(font "Arial" (font_size 8)))
-		(line (pt 0 48)(pt 16 48))
+		(text "DR[15..0]" (rect 0 0 54 13)(font "Arial" (font_size 8)))
+		(text "DR[15..0]" (rect 21 43 75 56)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
 	)
 	(port
 		(pt 0 64)
 		(input)
-		(text "DR[15..0]" (rect 0 0 54 13)(font "Arial" (font_size 8)))
-		(text "DR[15..0]" (rect 21 59 75 72)(font "Arial" (font_size 8)))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
+		(text "clk" (rect 0 0 18 13)(font "Arial" (font_size 8)))
+		(text "clk" (rect 21 59 39 72)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 16 64))
 	)
 	(port
 		(pt 0 80)

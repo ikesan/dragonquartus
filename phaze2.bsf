@@ -20,14 +20,14 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 16 16 256 176)
+	(rect 16 16 240 176)
 	(text "phaze2" (rect 5 0 47 13)(font "Arial" (font_size 8)))
 	(text "inst" (rect 8 145 26 156)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
-		(text "IN_IR[15..0]" (rect 0 0 68 13)(font "Arial" (font_size 8)))
-		(text "IN_IR[15..0]" (rect 21 27 89 40)(font "Arial" (font_size 8)))
+		(text "IN_IR[13..8]" (rect 0 0 68 13)(font "Arial" (font_size 8)))
+		(text "IN_IR[13..8]" (rect 21 27 89 40)(font "Arial" (font_size 8)))
 		(line (pt 0 32)(pt 16 32)(line_width 3))
 	)
 	(port
@@ -73,27 +73,20 @@ applicable agreement for further details.
 		(line (pt 0 128)(pt 16 128))
 	)
 	(port
-		(pt 240 32)
-		(output)
-		(text "OUT_IR[15..0]" (rect 0 0 82 13)(font "Arial" (font_size 8)))
-		(text "OUT_IR[15..0]" (rect 137 27 219 40)(font "Arial" (font_size 8)))
-		(line (pt 240 32)(pt 224 32)(line_width 3))
-	)
-	(port
-		(pt 240 48)
+		(pt 224 32)
 		(output)
 		(text "RdRb[15..0]" (rect 0 0 68 13)(font "Arial" (font_size 8)))
-		(text "RdRb[15..0]" (rect 151 43 219 56)(font "Arial" (font_size 8)))
-		(line (pt 240 48)(pt 224 48)(line_width 3))
+		(text "RdRb[15..0]" (rect 135 27 203 40)(font "Arial" (font_size 8)))
+		(line (pt 224 32)(pt 208 32)(line_width 3))
 	)
 	(port
-		(pt 240 64)
+		(pt 224 48)
 		(output)
 		(text "RsRa[15..0]" (rect 0 0 68 13)(font "Arial" (font_size 8)))
-		(text "RsRa[15..0]" (rect 151 59 219 72)(font "Arial" (font_size 8)))
-		(line (pt 240 64)(pt 224 64)(line_width 3))
+		(text "RsRa[15..0]" (rect 135 43 203 56)(font "Arial" (font_size 8)))
+		(line (pt 224 48)(pt 208 48)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 224 144))
+		(rectangle (rect 16 16 208 144))
 	)
 )
