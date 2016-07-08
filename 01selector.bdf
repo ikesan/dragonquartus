@@ -37,9 +37,9 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 496 248 664 264)
+	(rect 424 248 592 264)
 	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
-	(text "V0" (rect 5 0 21 11)(font "Arial" ))
+	(text "V0" (rect 5 0 20 11)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -55,7 +55,7 @@ applicable agreement for further details.
 	(input)
 	(rect 448 392 616 408)
 	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
-	(text "V1" (rect 5 0 21 11)(font "Arial" ))
+	(text "V1" (rect 5 0 20 11)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -232,5 +232,9 @@ applicable agreement for further details.
 (connector
 	(pt 792 328)
 	(pt 800 328)
+)
+(connector
+	(pt 664 256)
+	(pt 592 256)
 )
 (junction (pt 616 328))

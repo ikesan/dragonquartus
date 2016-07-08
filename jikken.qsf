@@ -113,17 +113,10 @@ set_global_assignment -name BDF_FILE kadai1.bdf
 set_global_assignment -name BDF_FILE opSelector.bdf
 set_global_assignment -name BDF_FILE output_files/regALUSelector.bdf
 set_global_assignment -name BDF_FILE output_files/ALU.bdf
-set_global_assignment -name BDF_FILE output_files/16bitsub2.bdf
-set_global_assignment -name BDF_FILE output_files/16bitcmp.bdf
-set_global_assignment -name BDF_FILE output_files/16_4_SRL.bdf
-set_global_assignment -name BDF_FILE output_files/16_4_SRA.bdf
-set_global_assignment -name BDF_FILE output_files/16_4_SLR.bdf
-set_global_assignment -name BDF_FILE output_files/16_4_SLL.bdf
 set_global_assignment -name BDF_FILE phaze2.bdf
 set_global_assignment -name BDF_FILE 88selector.bdf
 set_global_assignment -name BDF_FILE 38encoder.bdf
 set_global_assignment -name BDF_FILE 8regesters.bdf
-set_global_assignment -name QIP_FILE ram1.qip
 set_global_assignment -name BDF_FILE jikken.bdf
 set_global_assignment -name MIF_FILE meirei.mif
 set_global_assignment -name CDF_FILE output_files/Chain2.cdf
@@ -188,4 +181,5 @@ set_location_assignment PIN_236 -to in[3]
 set_location_assignment PIN_237 -to in[2]
 set_location_assignment PIN_238 -to in[1]
 set_location_assignment PIN_239 -to in[0]
+set_global_assignment -name SDC_FILE jikken.sdc
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

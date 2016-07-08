@@ -76,6 +76,14 @@ module addrAdd (in,d,out);
 	assign out = ans [15:0];
 endmodule
 
+module plus1 (in,out);
+	input  [15:0] in;
+	output [15:0] out;
+	wire  [16:0] ans;	
+	assign ans = in + 16'h0001 ;
+	assign out = ans [15:0];
+endmodule
+
 module ALUSubi (in,d,out,S,V,Z,C);
 	input signed  [15:0] in;
 	input signed  [7:0]   d;
