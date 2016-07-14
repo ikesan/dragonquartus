@@ -75,6 +75,8 @@ def getBin(line):
     ## 以下 簡略表記
     m = getMatched(rxreg+r'\s*=\s*'+bit8)
     if m : return getBin("li r" + m[0] + " " + m[1])
+    m = getMatched(rxreg+r'\s*<<=\s*'+bit8)
+    if m : return getBin("sll r" + m[0] + " " + m[1])
     m = getMatched(rxreg+r'\s*\+=\s*'+bit8)
     if m : return getBin("addi r" + m[0] + " " + m[1])
     m = getMatched(rxreg+r'\s*-=\s*'+bit8)

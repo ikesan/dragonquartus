@@ -1,7 +1,6 @@
 from mergesort import *
 from tohex import *
 import sys,re
-
 while True : 
     line = sys.stdin.readline()
     if not line : exit(0)

@@ -52,12 +52,12 @@ def makeMif(arr):
         "WIDTH=16;",
         "DEPTH="+str(len(arr))+";",
         "ADDRESS_RADIX=DEC;",
-        "DATA_RADIX=DEC;",
+        "DATA_RADIX=HEX;",
         "CONTENT BEGIN",
     ]    
     for c in contents : res += c + "\n"
     for i,a in enumerate(arr) :
-        res += "  " + str(i) + " : " + str(a) + ";\n" 
+        res += "  " + str(i) + " : " + a + ";\n" 
     return res + "END;"
 
 if __name__ == "__main__" :
