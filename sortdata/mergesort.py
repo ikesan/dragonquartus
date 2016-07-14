@@ -1,4 +1,5 @@
 from shiftmif import *
+import re
 #mem = [0,0,0,0,0,0,0,0, 31,14,15,92, 65,35,89,79, 32,38,46,26, 43,38,32,79, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0]
 #shift 0x200
 
@@ -26,12 +27,10 @@ def setSZCV(expr):
     global szcv
     szcv = expr
 
+code = """
 def mergesort():
     global mem,r4,r5,szcv
     mem = getMifArray(0x600)
-    # while r0 - r1 == 0:  => cmp r0 r1 ; bne <>
-    # if r0 - r1 == 0   :  => cmp r0 r1 ; bne <elseの先>
-    #0x200
     mem[r0+NUM] = 0x01
     mem[r0+TIMES] = 0x0a
     r4 = SORT2_INDEX
@@ -59,8 +58,6 @@ def mergesort():
         r4 -= 1
         mem[r0+TIMES] = r4
         setSZCV( r4 - 0)
-
-
 def sort():
     global begin , toi , flag    
     global r0,r4,r5,r6,r7
@@ -124,8 +121,14 @@ def sort():
         r4 = SORT_LEN
         r4 <<= SORT_LI_SLL    
         setSZCV(begin - r4)
-
+"""
 
 if __name__ == "__main__" :
+    trimedCode = ""
+    for a in code.split("\n"):
+        a = re.sub(r'#.+',"",a)
+        trimedCode += a + "\n"
+    exec(trimedCode)
+    print(trimedCode)
     mergesort()
-    print(mem)
+    #print(mem)
