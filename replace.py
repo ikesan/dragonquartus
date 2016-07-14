@@ -13,6 +13,10 @@ while True :
         line = line.replace(k,v)
     if line : 
         bin = getBin(line)
-        print(line.replace("\n",""),end="")
-        if bin != "### ERROR ###" : print("\t@ " + bin)
-        else :print("")
+        if len(sys.argv) > 1 and sys.argv[1] == "-n" : 
+            code = ""
+        else : code = " |" + line.replace("\n","")
+        if bin != "### ERROR ###" : 
+            print(bin + code)
+        else :
+            if code : print("    " + code)
