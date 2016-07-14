@@ -20,6 +20,7 @@ module VHDL_LI_B (
 	   opin2 == 3'b000 ? d16 : //Li
 	   opin2 == 3'b001 ? Rb + d16 : //Addi
 	   opin2 == 3'b010 ? Rb - d16 : //Subi
+	   opin2 == 3'b011 ? Rb - d16 : //Cmpi
 		PC + 16'h0001 + d16 ; //PC
 	assign out = isValid ? wout[15:0]:16'h0000;
 	assign Z = isValid & (out==16'h0000);
