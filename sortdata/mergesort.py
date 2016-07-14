@@ -1,8 +1,12 @@
-mem = [0,0,0,0,0,0,0,0, 31,14,15,92, 65,35,89,79, 32,38,46,26, 43,38,32,79, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0]
+from shiftmif import *
+#mem = [0,0,0,0,0,0,0,0, 31,14,15,92, 65,35,89,79, 32,38,46,26, 43,38,32,79, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0]
+mem = getMifArray(0x600)
+#shift 0x200
+
 consts = {
-    "SORT1_INDEX":"0x08",
-    "SORT_LEN":   "0x10",
-    "SORT2_INDEX":"0x18",
+    "SORT1_INDEX":'0x100',#テンポラリ領域
+    "SORT_LEN":   '0x400',#ソート長,
+    "SORT2_INDEX":'0x600',#データ領域,
     "NUM":     "0x0", # in memory
     "FROM_MEM":"0x3", # in memory
     "TO_MEM":  "0x4", # in memory
@@ -22,14 +26,14 @@ def sort():
     global mem
     begin = 0 
     while begin - SORT_LEN < 0:
-        mem[r0+0x01] = begin #i1   
-        r4 = mem[r0+NUM]     #i2
+        mem[r0+0x01] = begin #i1 = begin 
+        r4 = mem[r0+NUM]     #i2 = begin + n
         r4 += begin          # :
         mem[r0+0x02] = r4    # :
         toi = begin
         flag = 0 
         while flag - 3 != 0:
-            # r7 required in this block
+            # r7 reserved in this block 
             if flag - 2 == 0 :
                 r7 = 1
             else :
@@ -37,7 +41,7 @@ def sort():
                     r7 = 2
                 else :
                     r4 = mem[r0+FROM_MEM] # mem[mem[FROM_MEM] + mem[1]] - mem[mem[FROM_MEM]+mem[2]]
-                    r6 = mem[r0+0x01]
+                    r6 = mem[r0+0x01]     # : mem[mem[from] + i1] - mem[mem[from] + i2]
                     r6 += r4 
                     r6 = mem[r6+0x00]
                     r5 = mem[r0+0x02]
@@ -48,14 +52,14 @@ def sort():
                     else :
                         r7 = 0x02
             r4 = mem[r0+FROM_MEM] # mem[mem[toMem] + toi] = mem[mem[FROM_MEM]+mem[r7]]
-            r5 = mem[r7+0x00]        # :
+            r5 = mem[r7+0x00]     # :
             r4 += r5              # :
-            r4 = mem[r4+0x00]        # :
+            r4 = mem[r4+0x00]     # :
             r5 = mem[r0+TO_MEM]   # :
             r5 += toi             # :
-            mem[r5+0x00] = r4        # :
+            mem[r5+0x00] = r4     # :
             r4 = mem[r7+0x00] #i +=1
-            r4 += 1        # :
+            r4 += 1           # :
             mem[r7+0x00] = r4 # :
             r5 = mem[r0+NUM] # if i >= begin + i * n : flag += i
             if r7 - 2 == 0 :
@@ -68,44 +72,29 @@ def sort():
         r4 += r4        # :
         begin += r4     # :
 
+def sortOneTime(i,fromIndex,toIndex):
+    global r4,mem
+    r4 = i #0x01
+    mem[r0+NUM] = r4
+    r4 = fromIndex #SORT1_INDEX
+    mem[r0+FROM_MEM] = r4
+    r4 = toIndex  #SORT2_INDEX
+    mem[r0+TO_MEM] = r4
+    sort()
+    #print(mem)
+
 
 if __name__ == "__main__" :
     # while r0 - r1 == 0:  => cmp r0 r1 ; bne <>
     # if r0 - r1 == 0   :  => cmp r0 r1 ; bne <elseの先>
-    print(mem)
-
-    r4 = 0x01
-    mem[r0+NUM] = r4
-    r4 = SORT1_INDEX
-    mem[r0+FROM_MEM] = r4
-    r4 =  SORT2_INDEX
-    mem[r0+TO_MEM] = r4
-    sort()
-    print(mem)
-
-    r4 = 0x02
-    mem[r0+NUM] = r4
-    r4 = SORT1_INDEX
-    mem[r0+TO_MEM] = r4
-    r4 =  SORT2_INDEX
-    mem[r0+FROM_MEM] = r4
-    sort()
-    print(mem)
-
-    r4 = 0x04
-    mem[r0+NUM] = r4
-    r4 = SORT1_INDEX
-    mem[r0+FROM_MEM] = r4
-    r4 =  SORT2_INDEX
-    mem[r0+TO_MEM] = r4
-    sort()
-    print(mem)
-
-    r4 = 0x08
-    mem[r0+NUM] = r4
-    r4 = SORT1_INDEX
-    mem[r0+TO_MEM] = r4
-    r4 =  SORT2_INDEX
-    mem[r0+FROM_MEM] = r4
-    sort()
+    sortOneTime(0x001,SORT2_INDEX,SORT1_INDEX)
+    sortOneTime(0x002,SORT1_INDEX,SORT2_INDEX)
+    sortOneTime(0x004,SORT2_INDEX,SORT1_INDEX)
+    sortOneTime(0x008,SORT1_INDEX,SORT2_INDEX)
+    sortOneTime(0x010,SORT2_INDEX,SORT1_INDEX)
+    sortOneTime(0x020,SORT1_INDEX,SORT2_INDEX)
+    sortOneTime(0x040,SORT2_INDEX,SORT1_INDEX)
+    sortOneTime(0x080,SORT1_INDEX,SORT2_INDEX)
+    sortOneTime(0x100,SORT2_INDEX,SORT1_INDEX)
+    sortOneTime(0x200,SORT1_INDEX,SORT2_INDEX)
     print(mem)
