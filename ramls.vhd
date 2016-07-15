@@ -61,6 +61,7 @@ ARCHITECTURE SYN OF ramls IS
 	GENERIC (
 		address_aclr_a		: STRING;
 		indata_aclr_a		: STRING;
+		init_file		: STRING;
 		intended_device_family		: STRING;
 		lpm_hint		: STRING;
 		lpm_type		: STRING;
@@ -90,6 +91,7 @@ BEGIN
 	GENERIC MAP (
 		address_aclr_a => "NONE",
 		indata_aclr_a => "NONE",
+		init_file => "../sortdata.hex",
 		intended_device_family => "Cyclone",
 		lpm_hint => "ENABLE_RUNTIME_MOD=YES,INSTANCE_NAME=NONE",
 		lpm_type => "altsyncram",
@@ -125,7 +127,7 @@ END SYN;
 -- Retrieval info: PRIVATE: AclrOutput NUMERIC "0"
 -- Retrieval info: PRIVATE: BYTE_ENABLE NUMERIC "0"
 -- Retrieval info: PRIVATE: BYTE_SIZE NUMERIC "8"
--- Retrieval info: PRIVATE: BlankMemory NUMERIC "1"
+-- Retrieval info: PRIVATE: BlankMemory NUMERIC "0"
 -- Retrieval info: PRIVATE: CLOCK_ENABLE_INPUT_A NUMERIC "0"
 -- Retrieval info: PRIVATE: CLOCK_ENABLE_OUTPUT_A NUMERIC "0"
 -- Retrieval info: PRIVATE: Clken NUMERIC "0"
@@ -137,7 +139,7 @@ END SYN;
 -- Retrieval info: PRIVATE: JTAG_ENABLED NUMERIC "1"
 -- Retrieval info: PRIVATE: JTAG_ID STRING "NONE"
 -- Retrieval info: PRIVATE: MAXIMUM_DEPTH NUMERIC "0"
--- Retrieval info: PRIVATE: MIFfilename STRING ""
+-- Retrieval info: PRIVATE: MIFfilename STRING "../sortdata.hex"
 -- Retrieval info: PRIVATE: NUMWORDS_A NUMERIC "4096"
 -- Retrieval info: PRIVATE: RAM_BLOCK_TYPE NUMERIC "0"
 -- Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_PORT_A NUMERIC "3"
@@ -154,6 +156,7 @@ END SYN;
 -- Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
 -- Retrieval info: CONSTANT: ADDRESS_ACLR_A STRING "NONE"
 -- Retrieval info: CONSTANT: INDATA_ACLR_A STRING "NONE"
+-- Retrieval info: CONSTANT: INIT_FILE STRING "../sortdata.hex"
 -- Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone"
 -- Retrieval info: CONSTANT: LPM_HINT STRING "ENABLE_RUNTIME_MOD=YES,INSTANCE_NAME=NONE"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "altsyncram"
