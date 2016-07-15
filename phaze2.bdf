@@ -121,9 +121,9 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 320 32 488 48)
+	(rect 1760 32 1928 48)
 	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
-	(text "IN_IR[13..8]" (rect 5 0 65 11)(font "Arial" ))
+	(text "IN_IR[13..8]" (rect 5 0 64 11)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -1209,12 +1209,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "IR[10..8]" (rect 2120 42 2131 84)(font "Arial" )(vertical))
-	(pt 2136 40)
-	(pt 2136 88)
-	(bus)
-)
-(connector
 	(pt 2136 240)
 	(pt 2136 496)
 	(bus)
@@ -1233,11 +1227,6 @@ applicable agreement for further details.
 (connector
 	(pt 2152 960)
 	(pt 2032 960)
-	(bus)
-)
-(connector
-	(pt 2032 40)
-	(pt 2136 40)
 	(bus)
 )
 (connector
@@ -1557,9 +1546,21 @@ applicable agreement for further details.
 	(pt 648 640)
 )
 (connector
-	(text "IR[13..8]" (rect 498 24 540 35)(font "Arial" ))
-	(pt 488 40)
+	(text "IR[13..8]" (rect 1938 24 1980 35)(font "Arial" ))
+	(pt 1928 40)
 	(pt 2032 40)
+	(bus)
+)
+(connector
+	(text "<<__$DEF_ALIAS801>>" (rect 2119 41 2130 164)(font "Arial" )(vertical)(invisible))
+	(pt 2136 40)
+	(pt 2136 88)
+	(bus)
+)
+(connector
+	(text "IR[10..8]" (rect 2095 24 2137 35)(font "Arial" ))
+	(pt 2032 40)
+	(pt 2136 40)
 	(bus)
 )
 (junction (pt 856 688))
