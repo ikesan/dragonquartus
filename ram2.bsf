@@ -40,8 +40,8 @@ applicable agreement for further details.
 	(port
 		(pt 0 64)
 		(input)
-		(text "address[10..0]" (rect 0 0 81 13)(font "Arial" (font_size 8)))
-		(text "address[10..0]" (rect 4 51 73 63)(font "Arial" (font_size 8)))
+		(text "address[6..0]" (rect 0 0 74 13)(font "Arial" (font_size 8)))
+		(text "address[6..0]" (rect 4 51 67 63)(font "Arial" (font_size 8)))
 		(line (pt 0 64)(pt 88 64)(line_width 3))
 	)
 	(port
@@ -60,7 +60,7 @@ applicable agreement for further details.
 	)
 	(drawing
 		(text "16 bits" (rect 110 17 193 156)(font "Arial" )(vertical))
-		(text "2048 words" (rect 120 9 214 178)(font "Arial" )(vertical))
+		(text "128 words" (rect 120 8 211 172)(font "Arial" )(vertical))
 		(text "Block type: AUTO" (rect 48 115 173 240)(font "Arial" ))
 		(line (pt 104 24)(pt 136 24))
 		(line (pt 136 24)(pt 136 96))
