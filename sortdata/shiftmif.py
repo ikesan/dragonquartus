@@ -61,6 +61,4 @@ def makeMif(arr):
     return res + "END;"
 
 if __name__ == "__main__" :
-    arr = getMifArray()
-    print(arr)
-    print(len(arr))
+    shiftcmds(0x200)
