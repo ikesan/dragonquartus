@@ -139,6 +139,7 @@ set_location_assignment PIN_61 -to clockcount[3]
 set_location_assignment PIN_60 -to clockcount[2]
 set_location_assignment PIN_59 -to clockcount[1]
 set_location_assignment PIN_58 -to clockcount[0]
+set_global_assignment -name MIF_FILE sortdata/ldst.mif
 set_global_assignment -name MIF_FILE sortdata/cmd.mif
 set_global_assignment -name MIF_FILE sortdata/random2.mif
 set_global_assignment -name HEX_FILE jumptes.hex
