@@ -6,24 +6,20 @@ code = """
     mem[r0+TIMES] = r4
     r4 = SORT2_INDEX
     r4 <<= SORT_LI_SLL
-    mem[r0+FROM_INDEX] = r4
+    mem[r0+FROM_MEM] = r4
     r4 = SORT1_INDEX
     r4 <<= SORT_LI_SLL
-    mem[r0+TO_INDEX]   = r4  
+    mem[r0+TO_MEM] = r4  
     r4 = mem[r0+TIMES] 
     @while0
     setSZCV( r4 - 0)
     b @while1 ? szcv <= 0  
-        r4 = mem[r0+FROM_INDEX]
-        mem[r0+FROM_MEM] = r4
-        r4 = mem[r0+TO_INDEX] 
-        mem[r0+TO_MEM] = r4
         b @sort
         @sortend
-        r5 = mem[r0+FROM_INDEX]
-        r4 = mem[r0+TO_INDEX]
-        mem[r0+FROM_INDEX] = r4
-        mem[r0+TO_INDEX] = r5
+        r5 = mem[r0+FROM_MEM]
+        r4 = mem[r0+TO_MEM]
+        mem[r0+FROM_MEM] = r4
+        mem[r0+TO_MEM] = r5
         r4 = mem[r0+NUM] 
         r4 += r4
         mem[r0+NUM] = r4
@@ -35,9 +31,9 @@ code = """
     hlt()
 @sort
     begin = 0 
+    @while2
     r4 = SORT_LEN
     r4 <<= SORT_LI_SLL    
-    @while2
     setSZCV(r4 - begin)
     b @sortend ? szcv <= 0  # b - r4 >= 0 <=> -b + r4 <= 0
         mem[r0+0x01] = begin #i1 = begin 
@@ -101,7 +97,5 @@ code = """
         r4 = mem[r0+NUM]  # begin += n * 2
         r4 += r4        # :
         begin += r4     # :
-        r4 = SORT_LEN
-        r4 <<= SORT_LI_SLL    
         b @while2
 """

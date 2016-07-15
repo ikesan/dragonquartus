@@ -57,6 +57,10 @@ def toAsms(code):
             asms[i] = a.replace(m,str(hex(j)))
     return asms
 
+def Hex(x):
+    if x >= 0 and x <= 0x9: return x
+    else : return hex(x)[2:]
+
 if __name__ == "__main__" :
     asms = toAsms(code)
     print("".join(asms))
@@ -69,6 +73,8 @@ if __name__ == "__main__" :
         cnt += 1
         asm = asms[pc]
         #print([begin,toi,flag,pc,r4,r5,r6,asm])
+        #pprint([hex(pc),[Hex(x) for x in mem[0:8]],asm])
+        print([mem[0:8],asm])
         if asm.startswith("b ") :
             m = re.findall(r'b\s+0x([0-9a-f]{1,2})(?:\s+\?\s+(.+))?',asm)
             m = m[0]
