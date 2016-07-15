@@ -10,12 +10,13 @@ consts = {
     "SORT_LEN":   '0x4',#0x4#ソート長(0x400),
     "SORT2_INDEX":'0x6',#0x6#データ領域(0x600),
     "SORT_LI_SLL":'0x8',#0x8#0x400はliできないのでシフトする
-    "NUM":     "0x0", # in memory
+    "NUM":     "0x0", # in memory(1,2:reserved)
     "FROM_MEM":"0x3", # in memory
     "TO_MEM":  "0x4", # in memory
-    "TIMES": "0x5",
-    "FROM_INDEX":"0x6",#
-    "TO_INDEX":"0x7",#
+    "TIMES":   "0x5", # in memory 
+    "BEGIN":"0x6", #begin for debug(r1)
+    "TOI":  "0x7", #toi   for debug(r2)
+    "FLAG": "0x8", #flag  for debug(r3)
 }
 
 for k,v in consts.items() : exec(k + " = %s" % v)
@@ -74,7 +75,7 @@ if __name__ == "__main__" :
         asm = asms[pc]
         #print([begin,toi,flag,pc,r4,r5,r6,asm])
         #pprint([hex(pc),[Hex(x) for x in mem[0:8]],asm])
-        print([mem[0:8],asm])
+        print([hex(pc),mem[0:9],asm])
         if asm.startswith("b ") :
             m = re.findall(r'b\s+0x([0-9a-f]{1,2})(?:\s+\?\s+(.+))?',asm)
             m = m[0]
