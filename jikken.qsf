@@ -68,20 +68,20 @@ set_location_assignment PIN_127 -to led2[3]
 set_location_assignment PIN_126 -to led2[2]
 set_location_assignment PIN_125 -to led2[1]
 set_location_assignment PIN_124 -to led2[0]
-set_location_assignment PIN_104 -to led4[6]
-set_location_assignment PIN_105 -to led4[5]
-set_location_assignment PIN_106 -to led4[4]
+set_location_assignment PIN_114 -to led4[6]
+set_location_assignment PIN_113 -to led4[5]
+set_location_assignment PIN_108 -to led4[4]
 set_location_assignment PIN_107 -to led4[3]
-set_location_assignment PIN_108 -to led4[2]
-set_location_assignment PIN_113 -to led4[1]
-set_location_assignment PIN_114 -to led4[0]
-set_location_assignment PIN_116 -to 0led3[6]
-set_location_assignment PIN_117 -to 0led3[5]
-set_location_assignment PIN_118 -to 0led3[4]
+set_location_assignment PIN_106 -to led4[2]
+set_location_assignment PIN_105 -to led4[1]
+set_location_assignment PIN_104 -to led4[0]
+set_location_assignment PIN_122 -to 0led3[6]
+set_location_assignment PIN_121 -to 0led3[5]
+set_location_assignment PIN_120 -to 0led3[4]
 set_location_assignment PIN_119 -to 0led3[3]
-set_location_assignment PIN_120 -to 0led3[2]
-set_location_assignment PIN_121 -to 0led3[1]
-set_location_assignment PIN_122 -to 0led3[0]
+set_location_assignment PIN_118 -to 0led3[2]
+set_location_assignment PIN_117 -to 0led3[1]
+set_location_assignment PIN_116 -to 0led3[0]
 
 set_location_assignment PIN_3 -to exec
 set_location_assignment PIN_4 -to enter
@@ -191,4 +191,9 @@ set_global_assignment -name BDF_FILE output_files/writeregcheck.bdf
 set_global_assignment -name SDC_FILE jikken.sdc
 set_global_assignment -name HEX_FILE outputtes.hex
 set_global_assignment -name HEX_FILE ju.hex
+set_global_assignment -name HEX_FILE sort.hex
+set_global_assignment -name HEX_FILE sortdata.hex
+set_global_assignment -name HEX_FILE output_files/halttes.hex
+set_global_assignment -name CDF_FILE output_files/Chain8.cdf
+set_global_assignment -name QIP_FILE DataRAM.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
