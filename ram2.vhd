@@ -91,9 +91,9 @@ BEGIN
 	GENERIC MAP (
 		address_aclr_a => "NONE",
 		indata_aclr_a => "NONE",
-		init_file => "../outputtes.hex",
+		init_file => "outputtes.hex",
 		intended_device_family => "Cyclone",
-		lpm_hint => "ENABLE_RUNTIME_MOD=YES,INSTANCE_NAME=NONE",
+		lpm_hint => "ENABLE_RUNTIME_MOD=YES,INSTANCE_NAME=main",
 		lpm_type => "altsyncram",
 		numwords_a => 256,
 		operation_mode => "SINGLE_PORT",
@@ -137,9 +137,9 @@ END SYN;
 -- Retrieval info: PRIVATE: INIT_TO_SIM_X NUMERIC "0"
 -- Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone"
 -- Retrieval info: PRIVATE: JTAG_ENABLED NUMERIC "1"
--- Retrieval info: PRIVATE: JTAG_ID STRING "NONE"
+-- Retrieval info: PRIVATE: JTAG_ID STRING "main"
 -- Retrieval info: PRIVATE: MAXIMUM_DEPTH NUMERIC "0"
--- Retrieval info: PRIVATE: MIFfilename STRING "../outputtes.hex"
+-- Retrieval info: PRIVATE: MIFfilename STRING "outputtes.hex"
 -- Retrieval info: PRIVATE: NUMWORDS_A NUMERIC "256"
 -- Retrieval info: PRIVATE: RAM_BLOCK_TYPE NUMERIC "0"
 -- Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_PORT_A NUMERIC "3"
@@ -156,9 +156,9 @@ END SYN;
 -- Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
 -- Retrieval info: CONSTANT: ADDRESS_ACLR_A STRING "NONE"
 -- Retrieval info: CONSTANT: INDATA_ACLR_A STRING "NONE"
--- Retrieval info: CONSTANT: INIT_FILE STRING "../outputtes.hex"
+-- Retrieval info: CONSTANT: INIT_FILE STRING "outputtes.hex"
 -- Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone"
--- Retrieval info: CONSTANT: LPM_HINT STRING "ENABLE_RUNTIME_MOD=YES,INSTANCE_NAME=NONE"
+-- Retrieval info: CONSTANT: LPM_HINT STRING "ENABLE_RUNTIME_MOD=YES,INSTANCE_NAME=main"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "altsyncram"
 -- Retrieval info: CONSTANT: NUMWORDS_A NUMERIC "256"
 -- Retrieval info: CONSTANT: OPERATION_MODE STRING "SINGLE_PORT"

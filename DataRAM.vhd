@@ -93,7 +93,7 @@ BEGIN
 		indata_aclr_a => "NONE",
 		init_file => "/export/home/014/a0147044/jikken-hard/sortdata.hex",
 		intended_device_family => "Cyclone",
-		lpm_hint => "ENABLE_RUNTIME_MOD=NO",
+		lpm_hint => "ENABLE_RUNTIME_MOD=YES,INSTANCE_NAME=Data",
 		lpm_type => "altsyncram",
 		numwords_a => 4096,
 		operation_mode => "SINGLE_PORT",
@@ -136,8 +136,8 @@ END SYN;
 -- Retrieval info: PRIVATE: INIT_FILE_LAYOUT STRING "PORT_A"
 -- Retrieval info: PRIVATE: INIT_TO_SIM_X NUMERIC "0"
 -- Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone"
--- Retrieval info: PRIVATE: JTAG_ENABLED NUMERIC "0"
--- Retrieval info: PRIVATE: JTAG_ID STRING "NONE"
+-- Retrieval info: PRIVATE: JTAG_ENABLED NUMERIC "1"
+-- Retrieval info: PRIVATE: JTAG_ID STRING "Data"
 -- Retrieval info: PRIVATE: MAXIMUM_DEPTH NUMERIC "0"
 -- Retrieval info: PRIVATE: MIFfilename STRING "/export/home/014/a0147044/jikken-hard/sortdata.hex"
 -- Retrieval info: PRIVATE: NUMWORDS_A NUMERIC "4096"
@@ -158,7 +158,7 @@ END SYN;
 -- Retrieval info: CONSTANT: INDATA_ACLR_A STRING "NONE"
 -- Retrieval info: CONSTANT: INIT_FILE STRING "/export/home/014/a0147044/jikken-hard/sortdata.hex"
 -- Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone"
--- Retrieval info: CONSTANT: LPM_HINT STRING "ENABLE_RUNTIME_MOD=NO"
+-- Retrieval info: CONSTANT: LPM_HINT STRING "ENABLE_RUNTIME_MOD=YES,INSTANCE_NAME=Data"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "altsyncram"
 -- Retrieval info: CONSTANT: NUMWORDS_A NUMERIC "4096"
 -- Retrieval info: CONSTANT: OPERATION_MODE STRING "SINGLE_PORT"
