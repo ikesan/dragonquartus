@@ -13,7 +13,7 @@ def getCmd(line):
         if op3 in bin_cmd["alu"] :
             return bin_cmd["alu"][op3] + " " +reg(rd) + "," + reg(rs)
         if op3 in bin_cmd["shift"] :
-            return bin_cmd["shift"][op3] + " " +reg(rs) + "," + bin4_num[d]
+            return bin_cmd["shift"][op3] + " " +reg(rd) + "," + bin4_num[d]
         if op3 == "1111": return "hlt"
         if op3 == "1100": return "in " + reg(rd)
         if op3 == "1101": return "out " + reg(rs)

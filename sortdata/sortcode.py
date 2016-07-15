@@ -1,7 +1,9 @@
 code = """
 @mergesort
-    mem[r0+NUM] = 0x01
-    mem[r0+TIMES] = 0x0a #0x04
+    r4 = 0x01
+    mem[r0+NUM] = r4
+    r4 = 0x0a #0x04
+    mem[r0+TIMES] = r4
     r4 = SORT2_INDEX
     r4 <<= SORT_LI_SLL
     mem[r0+FROM_INDEX] = r4
