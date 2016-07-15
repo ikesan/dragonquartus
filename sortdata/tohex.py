@@ -63,6 +63,10 @@ def getBin(line):
     if m : return bin2hex("10" + cmd_bin["imm"][m[0]] + reg[m[1]] + d2(m[2]))
     m = getMatched(r'(ld|st)'+sp+rxreg+sp+bit8+r'\('+rxreg+r'\)')
     if m : return bin2hex(cmd_bin["addr"][m[0]] + reg[m[1]] + reg[m[3]] + d2(m[2]))
+    m = getMatched(r'b\s+'+bit8+r'\s*\?.+?(==|!=|<|<=)\s+?0')
+    if m : 
+        bcmd = {"==":"be", "<":"blt", "<=":"ble","!=": "bne"}
+        return getBin(bcmd[m[1]] + " " + m[0])
     m = getMatched(r'(b|be|blt|ble|bne)'+sp+bit8)
     if m : 
         if m[0] == "b": return bin2hex("10100000" + d2(m[1]))
@@ -81,10 +85,6 @@ def getBin(line):
     if m : return getBin("addi r" + m[0] + " " + m[1])
     m = getMatched(rxreg+r'\s*-=\s*'+bit8)
     if m : return getBin("subi r" + m[0] + " " + m[1])
-    m = re.findall(r'b\s+'+bit8+r'\s*\?.+?(==|!=|<|<=)\s+?0',line )
-    if m : 
-        bcmd = {"==":"be", "<":"blt", "<=":"ble","!=": "bne"}
-        return getBin(bcmd[m[1]] + " " + m[0])
     m = getMatched(rxreg+r'\s*=\s*'+rxreg)
     if m : return getBin("mov r" + m[0] + " r" + m[1])
     m = getMatched(rxreg+r'\s*\+=\s*'+rxreg)
