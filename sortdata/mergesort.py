@@ -1,13 +1,15 @@
 from shiftmif import *
 import re
-#mem = [0,0,0,0,0,0,0,0, 31,14,15,92, 65,35,89,79, 32,38,46,26, 43,38,32,79, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0]
+from pprint import pprint
+from sortcode import code
 #shift 0x200
-
+#mem = [ 0,0,0,0, 0,0,0,0,   0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0,  0,0,0,0, 31,14,15,92, 65,35,89,79, 32,38,46,26, 43,38,32,79]
+    
 consts = {
-    "SORT1_INDEX":'0x1',#テンポラリ領域(0x100)
-    "SORT_LEN":   '0x4',#ソート長(0x400),
-    "SORT2_INDEX":'0x6',#データ領域(0x600),
-    "SORT_LI_SLL":'0x8', #0x400はliできないのでシフトする
+    "SORT1_INDEX":'0x1',#0x1#テンポラリ領域(0x100)
+    "SORT_LEN":   '0x4',#0x4#ソート長(0x400),
+    "SORT2_INDEX":'0x6',#0x6#データ領域(0x600),
+    "SORT_LI_SLL":'0x8',#0x8#0x400はliできないのでシフトする
     "NUM":     "0x0", # in memory
     "FROM_MEM":"0x3", # in memory
     "TO_MEM":  "0x4", # in memory
@@ -26,109 +28,54 @@ szcv = (0)
 def setSZCV(expr):
     global szcv
     szcv = expr
+def hlt():
+    print(mem)
+    print(cnt)
+    exit(0)
 
-code = """
-def mergesort():
-    global mem,r4,r5,szcv
-    mem = getMifArray(0x600)
-    mem[r0+NUM] = 0x01
-    mem[r0+TIMES] = 0x0a
-    r4 = SORT2_INDEX
-    r4 <<= SORT_LI_SLL
-    mem[r0+FROM_INDEX] = r4
-    r4 = SORT1_INDEX
-    r4 <<= SORT_LI_SLL
-    mem[r0+TO_INDEX]   = r4  
-    r4 = mem[r0+TIMES] 
-    setSZCV( r4 - 0)
-    while szcv > 0 :
-        r4 = mem[r0+FROM_INDEX]
-        mem[r0+FROM_MEM] = r4
-        r4 = mem[r0+TO_INDEX] 
-        mem[r0+TO_MEM] = r4
-        sort()
-        r5 = mem[r0+FROM_INDEX]
-        r4 = mem[r0+TO_INDEX]
-        mem[r0+FROM_INDEX] = r4
-        mem[r0+TO_INDEX] = r5
-        r4 = mem[r0+NUM] 
-        r4 += r4
-        mem[r0+NUM] = r4
-        r4 = mem[r0+TIMES]
-        r4 -= 1
-        mem[r0+TIMES] = r4
-        setSZCV( r4 - 0)
-def sort():
-    global begin , toi , flag    
-    global r0,r4,r5,r6,r7
-    global mem,szcv
-    begin = 0 
-    r4 = SORT_LEN
-    r4 <<= SORT_LI_SLL    
-    setSZCV(begin - r4)
-    while szcv < 0:
-        mem[r0+0x01] = begin #i1 = begin 
-        r4 = mem[r0+NUM]     #i2 = begin + n
-        r4 += begin          # :
-        mem[r0+0x02] = r4    # :
-        toi = begin
-        flag = 0 
-        setSZCV(flag - 3)
-        while szcv != 0: # r7 reserved in this block 
-            setSZCV(flag - 2)
-            if szcv == 0 :
-                r7 = 1
-            else :
-                setSZCV(flag - 1)
-                if szcv == 0 :
-                    r7 = 2
-                else :
-                    r4 = mem[r0+FROM_MEM] # mem[mem[FROM_MEM] + mem[1]] - mem[mem[FROM_MEM]+mem[2]]
-                    r6 = mem[r0+0x01]     # : mem[mem[from] + i1] - mem[mem[from] + i2]
-                    r6 += r4 
-                    r6 = mem[r6+0x00]
-                    r5 = mem[r0+0x02]
-                    r5 += r4 
-                    r5 = mem[r5+0x00]
-                    setSZCV(r6 - r5)
-                    if szcv < 0 :
-                        r7 = 0x01
-                    else :
-                        r7 = 0x02
-            r4 = mem[r0+FROM_MEM] # mem[mem[toMem] + toi] = mem[mem[FROM_MEM]+mem[r7]]
-            r5 = mem[r7+0x00]     # :
-            r4 += r5              # :
-            r4 = mem[r4+0x00]     # :
-            r5 = mem[r0+TO_MEM]   # :
-            r5 += toi             # :
-            mem[r5+0x00] = r4     # :
-            r4 = mem[r7+0x00] #i +=1
-            r4 += 1           # :
-            mem[r7+0x00] = r4 # :
-            r5 = mem[r0+NUM] # if i >= begin + i * n : flag += i
-            setSZCV(r7 - 2)
-            if szcv == 0 :
-                r5 += r5    # r4 overlap(mem[r7])
-            r5 += begin
-            setSZCV(r4 - r5)            
-            if szcv >= 0 :
-                flag += r7
-            toi += 1
-            setSZCV(flag - 3)
-        r4 = mem[r0+NUM]  # begin += n * 2
-        r4 += r4        # :
-        begin += r4     # :
-        r4 = SORT_LEN
-        r4 <<= SORT_LI_SLL    
-        setSZCV(begin - r4)
-"""
 
-if __name__ == "__main__" :
-    trimedCode = ""
+def toAsms(code):
+    asms = [] 
+    labels = {} #label -> index
     for a in code.split("\n"):
         a = re.sub(r'#.+',"",a)
-        trimedCode += a + "\n"
-    exec(trimedCode)
-    print(trimedCode)
-    mergesort()
-    #print(mem)
+        a = a.replace('  ', "")
+        if not a : continue
+        if a.startswith('@') :
+            labels[a] = len(asms)
+        else :
+            asms.append(a + "\n")    
+    #set @
+    for i,a in enumerate(asms):
+        m = re.findall(r'(@[_a-zA-Z0-9]+)',a)
+        if m :
+            m = m[0]
+            j = labels[m]-i
+            assert(-0xff/2 <= j and j < 0xff/2)
+            if j < 0 : j += 0xff
+            else : j -= 0x01
+            asms[i] = a.replace(m,str(hex(j)))
+    return asms
+
+if __name__ == "__main__" :
+    asms = toAsms(code)
+    print("".join(asms))
+    mem = getMifArray(0x600)
+    if any("-n" in s for s in sys.argv):exit(0)
+    #asms = toAsms("b @a\nr4+=r4\nhlt()\n@a\nr4-=r4\nhlt()")#["b 0xff\n"]
+    pc = 0
+    cnt = 0
+    while True :
+        cnt += 1
+        asm = asms[pc]
+        #print([begin,toi,flag,pc,r4,r5,r6,asm])
+        if asm.startswith("b ") :
+            m = re.findall(r'b\s+0x([0-9a-f]{1,2})(?:\s+\?\s+(.+))?',asm)
+            m = m[0]
+            if (m[1]=='') or eval(m[1]):
+                j = int(m[0],16)
+                if j >= 0xff/2 : j -= 0xff + 1
+                pc += j
+        else :
+            exec(asm)
+        pc += 1

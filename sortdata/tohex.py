@@ -81,6 +81,10 @@ def getBin(line):
     if m : return getBin("addi r" + m[0] + " " + m[1])
     m = getMatched(rxreg+r'\s*-=\s*'+bit8)
     if m : return getBin("subi r" + m[0] + " " + m[1])
+    m = re.findall(r'b\s+'+bit8+r'\s*\?.+?(==|!=|<|<=)\s+?0',line )
+    if m : 
+        bcmd = {"==":"be", "<":"blt", "<=":"ble","!=": "bne"}
+        return getBin(bcmd[m[1]] + " " + m[0])
     m = getMatched(rxreg+r'\s*=\s*'+rxreg)
     if m : return getBin("mov r" + m[0] + " r" + m[1])
     m = getMatched(rxreg+r'\s*\+=\s*'+rxreg)
@@ -88,9 +92,11 @@ def getBin(line):
     m = getMatched(rxreg+r'\s*-=\s*'+rxreg)
     if m : return getBin("sub r" + m[0] + " r" + m[1])
     m = getMatched(rxreg+r'\s*=\s*mem\['+rxreg+r'\s*\+\s*'+bit8+r'\]')
+
     if m : return getBin("ld r" + m[0] + " "+ m[2]+"(r" +m[1]+")")
     m = getMatched(r'mem\['+rxreg+r'\s*\+\s*'+bit8+r'\]\s*=\s*'+rxreg)
     if m : return getBin("st r" + m[2] + " "+ m[1]+"(r" +m[0]+")")
+
     m = getMatched(rxreg+r'\s*-\s*'+bit8)
     if m : return getBin("cmpi r" + m[0] + " " + m[1])
     m = getMatched(r'r([0-7])\s*-\s*r([0-7])')

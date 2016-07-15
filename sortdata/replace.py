@@ -1,5 +1,6 @@
 from mergesort import *
 from tohex import *
+from fromhex import * 
 import sys,re
 while True : 
     line = sys.stdin.readline()
@@ -12,10 +13,12 @@ while True :
         line = line.replace(k,v)
     if line : 
         bin = getBin(line)
-        if len(sys.argv) > 1 and sys.argv[1] == "-n" : 
-            code = ""
-        else : code = " |" + line.replace("\n","")
+        code ,cmd = "",""
+        if not any("-n" in s for s in sys.argv):
+            code = " | " + line.replace("\n","")
         if bin != "### ERROR ###" : 
-            print(bin + code)
+            if not any("-c" in s for s in sys.argv):
+                cmd = " | " + getCmd(bin)
+            print(bin + cmd + code)
         else :
             if code : print("    " + code)
