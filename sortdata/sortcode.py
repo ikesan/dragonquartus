@@ -36,8 +36,8 @@ code = """
     r4 = SORT_LEN
     r4 <<= SORT_LI_SLL    
     @while2
-    setSZCV(begin - r4)
-    b @sortend ? szcv >= 0  # b - r4 >= 0 <=> -b + r4 <= 0
+    setSZCV(r4 - begin)
+    b @sortend ? szcv <= 0  # b - r4 >= 0 <=> -b + r4 <= 0
         mem[r0+0x01] = begin #i1 = begin 
         r4 = mem[r0+NUM]     #i2 = begin + n
         r4 += begin          # :
