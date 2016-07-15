@@ -2249,9 +2249,9 @@ applicable agreement for further details.
 	(pt 960 200)
 )
 (connector
-	(text "p1" (rect 984 -104 998 -93)(font "Arial" ))
+	(text "p2" (rect 936 -104 950 -93)(font "Arial" ))
 	(pt 992 -88)
-	(pt 976 -88)
+	(pt 928 -88)
 )
 (junction (pt 1528 208))
 (junction (pt 1528 448))
