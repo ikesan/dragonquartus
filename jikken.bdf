@@ -1418,7 +1418,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 1104 248 1320 376)
+	(rect 1184 256 1400 384)
 	(text "ram2" (rect 93 0 130 16)(font "Arial" (font_size 10)))
 	(text "ram2" (rect 8 113 35 124)(font "Arial" ))
 	(port
@@ -1501,6 +1501,38 @@ applicable agreement for further details.
 		(line (pt 0 0)(pt 0 0))
 	)
 )
+(symbol
+	(rect 992 -104 1056 -56)
+	(text "AND2" (rect 1 0 29 10)(font "Arial" (font_size 6)))
+	(text "inst16" (rect 3 37 33 48)(font "Arial" ))
+	(port
+		(pt 0 16)
+		(input)
+		(text "IN1" (rect 2 7 23 18)(font "Courier New" (bold))(invisible))
+		(text "IN1" (rect 2 7 23 18)(font "Courier New" (bold))(invisible))
+		(line (pt 0 16)(pt 14 16))
+	)
+	(port
+		(pt 0 32)
+		(input)
+		(text "IN2" (rect 2 23 23 34)(font "Courier New" (bold))(invisible))
+		(text "IN2" (rect 2 23 23 34)(font "Courier New" (bold))(invisible))
+		(line (pt 0 32)(pt 14 32))
+	)
+	(port
+		(pt 64 24)
+		(output)
+		(text "OUT" (rect 48 15 69 26)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 48 15 69 26)(font "Courier New" (bold))(invisible))
+		(line (pt 42 24)(pt 64 24))
+	)
+	(drawing
+		(line (pt 14 12)(pt 30 12))
+		(line (pt 14 37)(pt 31 37))
+		(line (pt 14 12)(pt 14 37))
+		(arc (pt 31 37)(pt 30 12)(rect 18 12 43 37))
+	)
+)
 (connector
 	(pt 936 600)
 	(pt 936 536)
@@ -1541,16 +1573,6 @@ applicable agreement for further details.
 (connector
 	(pt 1496 -208)
 	(pt 1856 -208)
-	(bus)
-)
-(connector
-	(pt 1496 264)
-	(pt 1496 -208)
-	(bus)
-)
-(connector
-	(pt 1496 264)
-	(pt 1400 264)
 	(bus)
 )
 (connector
@@ -1705,10 +1727,6 @@ applicable agreement for further details.
 	(pt 1528 208)
 	(pt 1632 208)
 	(bus)
-)
-(connector
-	(pt 1056 200)
-	(pt 1064 200)
 )
 (connector
 	(pt 1528 480)
@@ -1882,24 +1900,10 @@ applicable agreement for further details.
 	(pt 184 48)
 )
 (connector
-	(text "pcout[15..0]" (rect 946 208 1003 219)(font "Arial" ))
-	(pt 928 232)
-	(pt 1008 232)
-	(bus)
-)
-(connector
 	(text "DR[11..0]" (rect 978 -136 1025 -125)(font "Arial" ))
 	(pt 968 -120)
 	(pt 1104 -120)
 	(bus)
-)
-(connector
-	(pt 1056 -136)
-	(pt 1104 -136)
-)
-(connector
-	(pt 1056 -136)
-	(pt 1056 200)
 )
 (connector
 	(pt 1528 88)
@@ -1930,36 +1934,6 @@ applicable agreement for further details.
 	(text "<<__$DEF_ALIAS3075>>" (rect 408 -40 537 -29)(font "Arial" )(invisible))
 	(pt 472 -24)
 	(pt 480 -24)
-	(bus)
-)
-(connector
-	(pt 1064 296)
-	(pt 1104 296)
-)
-(connector
-	(pt 1064 272)
-	(pt 1064 296)
-)
-(connector
-	(text "pcout[7..0]" (rect 985 296 1036 307)(font "Arial" ))
-	(pt 1104 312)
-	(pt 968 312)
-	(bus)
-)
-(connector
-	(pt 1400 264)
-	(pt 1400 280)
-	(bus)
-)
-(connector
-	(text "IR[15..0]" (rect 1330 264 1372 275)(font "Arial" ))
-	(pt 1320 280)
-	(pt 1400 280)
-	(bus)
-)
-(connector
-	(pt 1400 280)
-	(pt 1424 280)
 	(bus)
 )
 (connector
@@ -2035,11 +2009,6 @@ applicable agreement for further details.
 	(text "IR[15]" (rect 1181 16 1210 27)(font "Arial" ))
 	(pt 1168 32)
 	(pt 1224 32)
-)
-(connector
-	(pt 688 104)
-	(pt 2352 104)
-	(bus)
 )
 (connector
 	(pt 752 248)
@@ -2146,15 +2115,6 @@ applicable agreement for further details.
 	(pt 264 360)
 )
 (connector
-	(pt 1104 360)
-	(pt 1080 360)
-)
-(connector
-	(text "clocknot" (rect 1057 356 1068 398)(font "Arial" )(vertical))
-	(pt 1080 360)
-	(pt 1080 392)
-)
-(connector
 	(pt 1408 -168)
 	(pt 1424 -168)
 )
@@ -2214,12 +2174,91 @@ applicable agreement for further details.
 	(pt 1352 -48)
 	(pt 1352 24)
 )
+(connector
+	(text "pcout[15..0]" (rect 946 208 1003 219)(font "Arial" ))
+	(pt 928 232)
+	(pt 1008 232)
+	(bus)
+)
+(connector
+	(pt 1496 104)
+	(pt 1496 -208)
+	(bus)
+)
+(connector
+	(pt 688 104)
+	(pt 1496 104)
+	(bus)
+)
+(connector
+	(pt 1496 104)
+	(pt 2352 104)
+	(bus)
+)
+(connector
+	(pt 960 200)
+	(pt 1064 200)
+)
+(connector
+	(pt 1072 -56)
+	(pt 1072 -72)
+)
+(connector
+	(pt 1064 304)
+	(pt 1184 304)
+)
+(connector
+	(pt 1064 272)
+	(pt 1064 304)
+)
+(connector
+	(text "pcout[7..0]" (rect 1065 304 1116 315)(font "Arial" ))
+	(pt 1184 320)
+	(pt 1048 320)
+	(bus)
+)
+(connector
+	(pt 1080 368)
+	(pt 1184 368)
+)
+(connector
+	(text "clocknot" (rect 1057 356 1068 398)(font "Arial" )(vertical))
+	(pt 1080 392)
+	(pt 1080 368)
+)
+(connector
+	(text "IR[15..0]" (rect 1410 272 1452 283)(font "Arial" ))
+	(pt 1400 288)
+	(pt 1504 288)
+	(bus)
+)
+(connector
+	(pt 1104 -136)
+	(pt 1056 -136)
+)
+(connector
+	(pt 1056 -136)
+	(pt 1056 -80)
+)
+(connector
+	(pt 992 -72)
+	(pt 960 -72)
+)
+(connector
+	(pt 960 -72)
+	(pt 960 200)
+)
+(connector
+	(text "p1" (rect 984 -104 998 -93)(font "Arial" ))
+	(pt 992 -88)
+	(pt 976 -88)
+)
 (junction (pt 1528 208))
 (junction (pt 1528 448))
 (junction (pt 472 -24))
-(junction (pt 1400 280))
 (junction (pt 2352 512))
 (junction (pt 64 480))
 (junction (pt 296 504))
 (junction (pt 416 496))
 (junction (pt 264 360))
+(junction (pt 1496 104))
