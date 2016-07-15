@@ -506,7 +506,7 @@ applicable agreement for further details.
 	(rotate90)
 )
 (symbol
-	(rect 1392 -176 1456 -96)
+	(rect 1392 -168 1456 -88)
 	(text "DFFE" (rect 1 0 26 10)(font "Arial" (font_size 6)))
 	(text "MDR" (rect 3 68 30 79)(font "Arial" ))
 	(port
@@ -1566,22 +1566,12 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1856 -80)
-	(pt 1856 -208)
-	(bus)
-)
-(connector
-	(pt 1496 -208)
-	(pt 1856 -208)
-	(bus)
-)
-(connector
 	(text "res" (rect 1160 512 1176 523)(font "Arial" ))
 	(pt 1176 528)
 	(pt 1152 528)
 )
 (connector
-	(text "outflg" (rect 1712 40 1723 68)(font "Arial" )(vertical))
+	(text "outflg" (rect 1711 39 1722 67)(font "Arial" )(vertical))
 	(pt 1728 48)
 	(pt 1728 80)
 )
@@ -1594,11 +1584,6 @@ applicable agreement for further details.
 	(pt 1080 -152)
 	(pt 1104 -152)
 	(bus)
-)
-(connector
-	(text "clock" (rect 1064 -88 1091 -77)(font "Arial" ))
-	(pt 1104 -72)
-	(pt 1072 -72)
 )
 (connector
 	(text "halt" (rect 408 448 428 459)(font "Arial" ))
@@ -1628,11 +1613,6 @@ applicable agreement for further details.
 (connector
 	(pt 1128 520)
 	(pt 1128 512)
-	(bus)
-)
-(connector
-	(pt 1112 520)
-	(pt 1128 520)
 	(bus)
 )
 (connector
@@ -1801,7 +1781,7 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "res" (rect 2272 576 2283 592)(font "Arial" )(vertical))
+	(text "res" (rect 2271 575 2282 591)(font "Arial" )(vertical))
 	(pt 2288 568)
 	(pt 2288 584)
 )
@@ -1814,16 +1794,6 @@ applicable agreement for further details.
 	(text "vcc" (rect 2272 457 2283 474)(font "Arial" )(vertical))
 	(pt 2288 488)
 	(pt 2288 480)
-)
-(connector
-	(text "clocknot" (rect 2232 512 2274 523)(font "Arial" ))
-	(pt 2240 528)
-	(pt 2256 528)
-)
-(connector
-	(text "p2" (rect 2248 528 2262 539)(font "Arial" ))
-	(pt 2256 544)
-	(pt 2240 544)
 )
 (connector
 	(pt 1944 512)
@@ -2115,47 +2085,6 @@ applicable agreement for further details.
 	(pt 264 360)
 )
 (connector
-	(pt 1408 -168)
-	(pt 1424 -168)
-)
-(connector
-	(pt 1408 -176)
-	(pt 1408 -168)
-)
-(connector
-	(pt 1424 -168)
-	(pt 1424 -176)
-)
-(connector
-	(text "MDRout[15..0]" (rect 1464 -168 1535 -157)(font "Arial" ))
-	(pt 1456 -152)
-	(pt 1480 -152)
-	(bus)
-)
-(connector
-	(text "res" (rect 1408 -86 1419 -70)(font "Arial" )(vertical))
-	(pt 1424 -96)
-	(pt 1424 -56)
-)
-(connector
-	(pt 1320 -152)
-	(pt 1392 -152)
-	(bus)
-)
-(connector
-	(text "clocknot" (rect 1352 -152 1394 -141)(font "Arial" ))
-	(pt 1344 -136)
-	(pt 1392 -136)
-)
-(connector
-	(pt 1344 -120)
-	(pt 1392 -120)
-)
-(connector
-	(pt 1344 -120)
-	(pt 1344 -112)
-)
-(connector
 	(text "IR[14]" (rect 1190 0 1219 11)(font "Arial" ))
 	(pt 1224 16)
 	(pt 1160 16)
@@ -2173,27 +2102,6 @@ applicable agreement for further details.
 	(text "<<__$DEF_ALIAS1725>>" (rect 1332 -16 1343 113)(font "Arial" )(vertical)(invisible))
 	(pt 1352 -48)
 	(pt 1352 24)
-)
-(connector
-	(text "pcout[15..0]" (rect 946 208 1003 219)(font "Arial" ))
-	(pt 928 232)
-	(pt 1008 232)
-	(bus)
-)
-(connector
-	(pt 1496 104)
-	(pt 1496 -208)
-	(bus)
-)
-(connector
-	(pt 688 104)
-	(pt 1496 104)
-	(bus)
-)
-(connector
-	(pt 1496 104)
-	(pt 2352 104)
-	(bus)
 )
 (connector
 	(pt 960 200)
@@ -2227,12 +2135,6 @@ applicable agreement for further details.
 	(pt 1080 368)
 )
 (connector
-	(text "IR[15..0]" (rect 1410 272 1452 283)(font "Arial" ))
-	(pt 1400 288)
-	(pt 1504 288)
-	(bus)
-)
-(connector
 	(pt 1104 -136)
 	(pt 1056 -136)
 )
@@ -2253,6 +2155,92 @@ applicable agreement for further details.
 	(pt 992 -88)
 	(pt 928 -88)
 )
+(connector
+	(pt 688 104)
+	(pt 2352 104)
+	(bus)
+)
+(connector
+	(pt 1856 -80)
+	(pt 1856 -40)
+	(bus)
+)
+(connector
+	(text "pcout[15..0]" (rect 946 208 1003 219)(font "Arial" ))
+	(pt 928 232)
+	(pt 1376 232)
+	(bus)
+)
+(connector
+	(pt 1408 -176)
+	(pt 1408 -168)
+)
+(connector
+	(pt 1408 -168)
+	(pt 1424 -168)
+)
+(connector
+	(text "res" (rect 1408 -78 1419 -62)(font "Arial" )(vertical))
+	(pt 1424 -88)
+	(pt 1424 -48)
+)
+(connector
+	(text "clocknot" (rect 1352 -144 1394 -133)(font "Arial" ))
+	(pt 1344 -128)
+	(pt 1392 -128)
+)
+(connector
+	(pt 1344 -112)
+	(pt 1392 -112)
+)
+(connector
+	(text "MDRout[15..0]" (rect 1343 -168 1414 -157)(font "Arial" ))
+	(pt 1320 -152)
+	(pt 1360 -152)
+	(bus)
+)
+(connector
+	(text "clock" (rect 2232 512 2259 523)(font "Arial" ))
+	(pt 2240 528)
+	(pt 2256 528)
+)
+(connector
+	(text "p1" (rect 2248 528 2262 539)(font "Arial" ))
+	(pt 2256 544)
+	(pt 2240 544)
+)
+(connector
+	(text "clocknot" (rect 1064 -88 1106 -77)(font "Arial" ))
+	(pt 1104 -72)
+	(pt 1072 -72)
+)
+(connector
+	(text "<<__$DEF_ALIAS152>>" (rect 1602 -56 1725 -45)(font "Arial" )(invisible))
+	(pt 1464 -40)
+	(pt 1856 -40)
+	(bus)
+)
+(connector
+	(pt 1464 288)
+	(pt 1464 -40)
+	(bus)
+)
+(connector
+	(text "IR[15..0]" (rect 1410 272 1452 283)(font "Arial" ))
+	(pt 1400 288)
+	(pt 1464 288)
+	(bus)
+)
+(connector
+	(pt 1464 288)
+	(pt 1504 288)
+	(bus)
+)
+(connector
+	(pt 1112 520)
+	(pt 1128 520)
+	(bus)
+)
 (junction (pt 1528 208))
 (junction (pt 1528 448))
 (junction (pt 472 -24))
@@ -2261,4 +2249,4 @@ applicable agreement for further details.
 (junction (pt 296 504))
 (junction (pt 416 496))
 (junction (pt 264 360))
-(junction (pt 1496 104))
+(junction (pt 1464 288))
