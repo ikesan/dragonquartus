@@ -43,9 +43,9 @@ code = """
         toi = begin
         flag = 0 
         @while4
-        mem[r0+BEGIN] = begin # FOR DEBUG
-        mem[r0+TOI]   = toi   # FOR DEBUG
-        mem[r0+FLAG]  = flag  # FOR DEBUG
+        # mem[r0+BEGIN] = begin # FOR DEBUG
+        # mem[r0+TOI]   = toi   # FOR DEBUG
+        # mem[r0+FLAG]  = flag  # FOR DEBUG
         setSZCV(flag - 3)
         b @while5 ? szcv == 0 # r7 reserved in this block 
             setSZCV(flag - 2)
