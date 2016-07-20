@@ -52,12 +52,18 @@ code = """  # r1:left,r2:right,r6:jump,r7:top | r3:i,r4:j,r5:piv
         r3 = mem[r1+0]
         r4 = mem[r2+0]
         r5 = r2
+        # mem[r0+5] = r5 #For Debug
         r5 -= r1
+        # mem[r0+5] = r5 #For Debug
         r5 >>= 1
+        # mem[r0+5] = r5 #For Debug
         r5 += r1
+        # mem[r0+5] = r5 #For Debug
         r5 = mem[r5+0]
+        # mem[r0+5] = r5 #For Debug
         b @piv        
         @pivend
+        # mem[r0+5] = r5 #For Debug
         mem[r0+1] = r1
         mem[r0+2] = r2
         r3 = r1
@@ -65,15 +71,17 @@ code = """  # r1:left,r2:right,r6:jump,r7:top | r3:i,r4:j,r5:piv
         @qwhile
             @qw1  
             r1 = mem[r3+0]
-            setSZCV(r1-r5)     
-            b @qwf1 ? szcv >= 0
-                r3 += 1
+            # mem[r0+3] = r1 #For Debug
+            setSZCV(r5-r1)     
+            b @qwf1 ? szcv <= 0
+                r3 += 1                
                 b @qw1
             @qwf1
             @qw2
             r1 = mem[r4+0]
-            setSZCV(r5-r1)
-            b @qwf2 ? szcv >= 0
+            # mem[r0+4] = r1 #For Debug
+            setSZCV(r1-r5)
+            b @qwf2 ? szcv <= 0
                 r4 -= 1
                 b @qw2
             @qwf2
@@ -89,10 +97,11 @@ code = """  # r1:left,r2:right,r6:jump,r7:top | r3:i,r4:j,r5:piv
         @qwhileend
         r1 = mem[r0+1]
         r2 = mem[r0+2]
-        mem[r7+0] = r4+1 #s-q2right
+        r4 += 1
+        mem[r7+0] = r4 #s-q2right
         mem[r7+1] = r2  #s-q2left
         mem[r7+2] = r6  #s-jump
-        r1 = r1        #q1:
+        # r1 = r1        #q1:
         r2 = r3        #  :
         r2 -= 1
         r6 = 1         #  :

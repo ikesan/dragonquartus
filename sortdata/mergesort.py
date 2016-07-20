@@ -30,7 +30,7 @@ def setSZCV(expr):
     global szcv
     szcv = expr
 def hlt():
-    print(mem)
+    print([Hex(x) for x in mem])
     print(cnt)
     exit(0)
 
@@ -60,8 +60,8 @@ def toAsms(code):
 
 def Hex(x):
     if x >= 0 and x <= 0x9: return x
+    elif x < 0 :return hex(x+2 ** 16)[2:]
     else : return hex(x)[2:]
-
 
 if __name__ == "__main__" :
     asms = toAsms(code)
@@ -74,9 +74,11 @@ if __name__ == "__main__" :
     while True :
         cnt += 1
         asm = asms[pc]
-        #print([r1,r2,r3,r4,r6,r7,asm])
-        #pprint([hex(pc),[Hex(x) for x in mem[0:8]],asm])
+        #print([hex(pc),[Hex(x) for x in [r1,r2,r3,r4,r5,r6,r7]],asm])
+        #print([hex(pc),[Hex(x) for x in mem[0:8]],asm])
         #print([hex(pc),mem[0:9],asm])
+        #print([Hex(x) for x in mem[0x10:0x30]])	
+        #print([hex(pc),Hex(mem[0x10]),[Hex(x) for x in mem[0:8]],asm])
         if asm.startswith("b ") :
             m = re.findall(r'b\s+0x([0-9a-f]{1,2})(?:\s+\?\s+(.+))?',asm)
             m = m[0]
