@@ -73,9 +73,9 @@ if __name__ == "__main__" :
     while True :
         cnt += 1
         asm = asms[pc]
-        #print([begin,toi,flag,pc,r4,r5,r6,asm])
+        #print([r4,r5,r6,r7,asm])
         #pprint([hex(pc),[Hex(x) for x in mem[0:8]],asm])
-        print([hex(pc),mem[0:9],asm])
+        #print([hex(pc),mem[0:9],asm])
         if asm.startswith("b ") :
             m = re.findall(r'b\s+0x([0-9a-f]{1,2})(?:\s+\?\s+(.+))?',asm)
             m = m[0]

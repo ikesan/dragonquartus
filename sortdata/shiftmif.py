@@ -16,7 +16,14 @@ def findandAdd(s,d):
         s = s.replace(m,added)
     return s
 
-def shiftcmds(shift = 0x100):    
+def findandAppend(s,arr,app):
+    match = re.findall(r'[0-9a-f]+',s)
+    for m in match :
+        if m == '000' : continue
+        if m == '3ff' : continue
+        arr.append(int(app))
+
+def shiftcmds(shift = 0x200):    
     while True : 
         line = sys.stdin.readline()
         if not line : return 
@@ -32,19 +39,17 @@ def shiftcmds(shift = 0x100):
                 line = line.replace(m,added) 
             print(line.strip("\n"))
 
-def getMifArray(startIndex = 0x500):
+def getMifArray(startIndex = 0x600):
     arr = []
     while True : 
         line = sys.stdin.readline()
         if not line : 
-            th = [0] * startIndex            
+            th = [0] * startIndex 
             return th + arr
         m = re.findall(r'(\s+)(.+?)(\s+):(.+?);',line)
         if m :
-            m = m[0]
-            try :
-                arr.append( int(m[3]))
-            except : pass            
+            m = m[0]            
+            findandAppend(m[1],arr,m[3])            
     
 def makeMif(arr):
     res = ""
