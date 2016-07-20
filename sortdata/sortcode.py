@@ -1,4 +1,122 @@
-code = """
+def qsort(l,r):
+    if l < r :
+        i,j = l,r
+        p = mem[i]
+        while True :
+            while mem[i] < p : i += 1
+            while mem[j] > p : j -= 1
+            if i >= j : break
+            mem[i],mem[j] = mem[j],mem[i]
+            i += 1
+            j -= 1
+        qsort(l,i-1)
+        qsort(j+1,r)
+def med(x,y,z):
+    if x < y :
+        if y < z : return y
+        if z < x : return x
+        return z
+    if x < z : return x
+    if y < z : return y
+    return z
+
+
+code = """  # r1:left,r2:right,r6:jump,r7:top | r3:i,r4:j,r5:piv
+@main        
+    r1 = SORT2_INDEX
+    r1 <<= SORT_LI_SLL    
+    r2 = SORT_LEN
+    r2 <<= SORT_LI_SLL
+    r2 += r1
+    r2 -= 1
+    r6 = 0
+    r7 = 0x10
+    b @quicksort
+    hlt()
+@piv    #r3,r4,r5 -> r5
+    setSZCV(r3-r4)
+    b @pivend ? szcv < 0
+    setSZCV(r5-r3) 
+    b @pivif2 ? szcv < 0
+        r5 = r3
+        b @pivend
+    @pivif2
+    setSZCV(r5-r4)
+    b @pivend ? szcv < 0
+        r5 = r4
+        b @pivend
+    hlt()
+@quicksort
+    setSZCV( r2 - r1 )
+    b @qrrif ? szcv <= 0
+        r3 = mem[r1+0]
+        r4 = mem[r2+0]
+        r5 = r2
+        r5 -= r1
+        r5 >>= 1
+        r5 += r1
+        r5 = mem[r5+0]
+        b @piv        
+        @pivend
+        mem[r0+1] = r1
+        mem[r0+2] = r2
+        r3 = r1
+        r4 = r2
+        @qwhile
+            @qw1  
+            r1 = mem[r3+0]
+            setSZCV(r1-r5)     
+            b @qwf1 ? szcv >= 0
+                r3 += 1
+                b @qw1
+            @qwf1
+            @qw2
+            r1 = mem[r4+0]
+            setSZCV(r5-r1)
+            b @qwf2 ? szcv >= 0
+                r4 -= 1
+                b @qw2
+            @qwf2
+            setSZCV(r4-r3)
+            b @qwhileend ? szcv <= 0
+            r1 = mem[r3+0]
+            r2 = mem[r4+0]
+            mem[r3+0] = r2
+            mem[r4+0] = r1
+            r3 += 1
+            r4 -= 1
+            b @qwhile
+        @qwhileend
+        r1 = mem[r0+1]
+        r2 = mem[r0+2]
+        mem[r7+0] = r4+1 #s-q2right
+        mem[r7+1] = r2  #s-q2left
+        mem[r7+2] = r6  #s-jump
+        r1 = r1        #q1:
+        r2 = r3        #  :
+        r2 -= 1
+        r6 = 1         #  :
+        r7 += 3        
+        b @quicksort
+        @q1end
+        r7 -= 3
+        r1 = mem[r7+0] #  :
+        r2 = mem[r7+1] #  :
+        r6 = 2         #  :
+        r7 += 3        
+        b @quicksort
+        @q2end
+        r7 -= 3
+        r6 = mem[r7+2]
+    @qrrif        
+    setSZCV(r6-1)
+    b @q1end ? szcv == 0
+    setSZCV(r6-2)
+    b @q2end ? szcv == 0
+    hlt()    
+"""
+
+codew = """
 @mergesort
     r4 = 0x01  # FOR DEBUG は消して良い / FOR FIX は修正したもの
     mem[r0+NUM] = r4

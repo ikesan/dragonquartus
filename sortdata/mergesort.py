@@ -1,7 +1,7 @@
 from shiftmif import *
 import re
 from pprint import pprint
-from sortcode import code
+from sortcode import *
 #shift 0x200
 #mem = [ 0,0,0,0, 0,0,0,0,   0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0,  0,0,0,0, 31,14,15,92, 65,35,89,79, 32,38,46,26, 43,38,32,79]
     
@@ -21,7 +21,7 @@ consts = {
 
 for k,v in consts.items() : exec(k + " = %s" % v)
 #mem[0:4] = [n,i1,i2,fromMem,toMem] #(i1:1,i2:2でなければならない)
-r0 = (0)  # r0 は0固定レジスタ
+r0,r1,r2,r3 = (0,0,0,0)  # r0 は0固定レジスタ
 begin,toi,flag = (0,0,0)  
 regVar = {"begin":"r1","toi":"r2","flag":"r3"} # レジスタのエイリアス
 r4,r5,r6,r7 = (0,0,0,0)   # 
@@ -62,10 +62,11 @@ def Hex(x):
     if x >= 0 and x <= 0x9: return x
     else : return hex(x)[2:]
 
+
 if __name__ == "__main__" :
     asms = toAsms(code)
     print("".join(asms))
-    mem = getMifArray(0x600)
+    mem = getMifArray(0x600) 
     if any("-n" in s for s in sys.argv):exit(0)
     #asms = toAsms("b @a\nr4+=r4\nhlt()\n@a\nr4-=r4\nhlt()")#["b 0xff\n"]
     pc = 0
@@ -73,7 +74,7 @@ if __name__ == "__main__" :
     while True :
         cnt += 1
         asm = asms[pc]
-        #print([r4,r5,r6,r7,asm])
+        #print([r1,r2,r3,r4,r6,r7,asm])
         #pprint([hex(pc),[Hex(x) for x in mem[0:8]],asm])
         #print([hex(pc),mem[0:9],asm])
         if asm.startswith("b ") :
