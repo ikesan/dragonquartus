@@ -55,9 +55,9 @@ module VHDLALU (AR,BR,d,opselect,isValid,inputFlag,outputFlag,iRdWriteFlag,SZCVW
   input isValid;
   output inputFlag,outputFlag,iRdWriteFlag,SZCVWriteFlag,HaltFlag,S,Z,C,V;
   output signed [15:0] Out;
-  wire [17:0] wOp;
-  wire [16:0] addWire ,subWire,sllWire,slrWire,srlWire,sraWire;
-  
+  wire signed [17:0] wOp;
+  wire [16:0] sllWire,slrWire,srlWire,sraWire;
+  wire signed [16:0]  addWire ,subWire;
   assign addWire = AR + BR; 
   assign subWire = BR - AR;
   sll sll0(BR,d,sllWire);
@@ -71,7 +71,7 @@ module VHDLALU (AR,BR,d,opselect,isValid,inputFlag,outputFlag,iRdWriteFlag,SZCVW
 		 opselect == 4'b0011 ? {2'b00,AR | BR}://
 		 opselect == 4'b0100 ? {2'b00,AR ^ BR}://
 		 opselect == 4'b0101 ? {subWire[16],subWire[16:0]}://
-		 opselect == 4'b0110 ? {2'b00,BR}://
+		 opselect == 4'b0110 ? {2'b00,AR}://
 		 opselect == 4'b1000 ? {1'b0,sllWire}: //sll
 		 opselect == 4'b1001 ? {1'b0,slrWire}: //slr
 		 opselect == 4'b1010 ? {1'b0,srlWire}: //srl
