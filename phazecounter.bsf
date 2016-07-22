@@ -86,6 +86,13 @@ applicable agreement for further details.
 		(text "p2" (rect 108 59 123 72)(font "Arial" (font_size 8)))
 		(line (pt 144 64)(pt 128 64))
 	)
+	(port
+		(pt 144 80)
+		(output)
+		(text "p3" (rect 0 0 15 13)(font "Arial" (font_size 8)))
+		(text "p3" (rect 108 75 123 88)(font "Arial" (font_size 8)))
+		(line (pt 144 80)(pt 128 80))
+	)
 	(drawing
 		(rectangle (rect 16 16 128 144))
 	)
